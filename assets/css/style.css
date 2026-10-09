@@ -483,6 +483,15 @@ body {
   flex-direction: column;
   align-items: flex-end;
   gap: 0.6rem;
+  /* 关键：容器只负责定位，不拦截点击。
+     收起的 .wa-card 只是 visibility:hidden（仍占布局），
+     容器 304x375、z-index 80，会把 z-index 79 的「回到顶部」整块盖住且不可见，
+     导致点击落在空 div 上 —— 按钮看着在、点了没反应。 */
+  pointer-events: none;
+}
+.wa-btn,
+.wa-card {
+  pointer-events: auto;
 }
 .wa-btn {
   position: relative;
