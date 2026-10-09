@@ -151,7 +151,7 @@ const MODELS = [
       { t: 'Fits secondary-dwelling caps', d: 'Sized to sit inside typical granny flat / ADU floor-area limits.' },
       { t: 'Compliance pack included', d: 'AS/NZS, IBC/IRC or EN documentation prepared for your building reviewer.' },
       { t: 'One or two per container', d: 'Two units fit a 40HQ when shipped without the furniture crate — we plan the loading for you.' },
-      { t: 'Unfolds in ~40 min', d: 'Two people plus a forklift; no crane, no welding, no wet trades on site.' },
+      { t: 'Unfolds in ~40 min', d: 'Two people plus a forklift; no heavy crane, no welding, no wet trades on site.' },
     ],
     specs: [
       ['Model code', '30E-3R1B'],
