@@ -5,9 +5,9 @@
  * 目的：站点在没有真实照片之前也能完整跑起来、且视觉统一。
  *
  * 用法： node tools/generate-placeholders.mjs
- * 输出： assets/img/*.svg
+ * 输出： assets/img/ 下按分类分子目录（见文件末尾的目录约定注释）
  *
- * 【替换真实照片】把 HTML 里的 src="assets/img/xxx.svg" 换成 xxx.jpg 即可，
+ * 【替换真实照片】直接覆盖 assets/img/ 下的同名文件即可（换成 .jpg 就顺带改 HTML 里的后缀），
  * 宽高比例建议保持一致（页面里已用 aspect-[] 锁定比例，不会跳动）。
  * ---------------------------------------------------------------------------
  */
@@ -101,14 +101,14 @@ const placeholderTag = (w, h, label = 'PLACEHOLDER · 替换为实拍图') =>
  * 产品数据（页面里的参数以 HTML 表格为准，这里只用于画图）
  * ========================================================================= */
 const MODELS = [
-  { key: '20ft', title: '20FT EXPANDABLE', sub: '2 Bedrooms · 1 Bath', closed: '5900 × 2260 × 2480 mm', open: '5900 × 6300 mm', area: '37.2 m²', panels: 3,
+  { key: '20ft', slug: '20ft-expandable', title: '20FT EXPANDABLE', sub: '2 Bedrooms · 1 Bath', closed: '5900 × 2260 × 2480 mm', open: '5900 × 6300 mm', area: '37.2 m²', panels: 3,
     rooms: [
       { x: 0, y: 0, w: 2.6, h: 3.1, label: 'BEDROOM 1', area: '9.1 m²' },
       { x: 2.6, y: 0, w: 2.7, h: 3.1, label: 'BATH + LAUNDRY', area: '7.6 m²' },
       { x: 0, y: 3.1, w: 2.3, h: 3.2, label: 'KITCHEN', area: '7.4 m²' },
       { x: 2.3, y: 3.1, w: 3.0, h: 3.2, label: 'LIVING / DINING', area: '9.6 m²' },
     ] },
-  { key: '30ft', title: '30FT EXPANDABLE', sub: '3 Bedrooms · 1 Bath', closed: '9000 × 2260 × 2480 mm', open: '9000 × 6300 mm', area: '56.7 m²', panels: 3,
+  { key: '30ft', slug: '30ft-expandable', title: '30FT EXPANDABLE', sub: '3 Bedrooms · 1 Bath', closed: '9000 × 2260 × 2480 mm', open: '9000 × 6300 mm', area: '56.7 m²', panels: 3,
     rooms: [
       { x: 0, y: 0, w: 3.0, h: 3.1, label: 'BEDROOM 1', area: '9.3 m²' },
       { x: 3.0, y: 0, w: 3.0, h: 3.1, label: 'BEDROOM 2', area: '9.3 m²' },
@@ -117,7 +117,7 @@ const MODELS = [
       { x: 2.4, y: 3.1, w: 4.0, h: 3.2, label: 'LIVING / DINING', area: '12.8 m²' },
       { x: 6.4, y: 3.1, w: 2.6, h: 3.2, label: 'BATHROOM', area: '8.3 m²' },
     ] },
-  { key: '40ft', title: '40FT EXPANDABLE', sub: '3 Bedrooms · 2 Bath', closed: '11800 × 2260 × 2480 mm', open: '11800 × 6300 mm', area: '74.3 m²', panels: 4,
+  { key: '40ft', slug: '40ft-expandable', title: '40FT EXPANDABLE', sub: '3 Bedrooms · 2 Bath', closed: '11800 × 2260 × 2480 mm', open: '11800 × 6300 mm', area: '74.3 m²', panels: 4,
     rooms: [
       { x: 0, y: 0, w: 3.0, h: 3.1, label: 'MASTER BEDROOM', area: '9.3 m²' },
       { x: 3.0, y: 0, w: 3.0, h: 3.1, label: 'BEDROOM 2', area: '9.3 m²' },
@@ -127,11 +127,35 @@ const MODELS = [
       { x: 3.4, y: 3.1, w: 4.6, h: 3.2, label: 'LIVING / DINING', area: '14.7 m²' },
       { x: 8.0, y: 3.1, w: 2.3, h: 3.2, label: 'BATH 2 / STORE', area: '7.4 m²' },
     ] },
-  { key: 'cabin', title: 'APPLE CABIN', sub: 'Studio · Capsule House', closed: '5800 × 2200 × 2500 mm', open: '5800 × 2200 mm', area: '12.8 m²', panels: 1,
+  { key: 'cabin', slug: 'apple-cabin', title: 'APPLE CABIN', sub: 'Studio · Capsule House', closed: '5800 × 2200 × 2500 mm', open: '5800 × 2200 mm', area: '12.8 m²', panels: 1,
     rooms: [
       { x: 0, y: 0, w: 4.1, h: 2.2, label: 'STUDIO / LIVING', area: '9.0 m²' },
       { x: 4.1, y: 0, w: 1.7, h: 2.2, label: 'BATH', area: '3.8 m²' },
     ] },
+];
+
+/* ===========================================================================
+ * 非折叠类产品（只有立视图，没有折叠板 / 户型图）
+ * 这些产品原先在 products.html 里直接借用折叠型号的图，导致「一张图顶四个产品」，
+ * 这里给每个产品生成自己的立视图，让每个商品目录完全独立。
+ * ========================================================================= */
+const UNITS = [
+  { key: 'flat-pack', slug: 'flat-pack', title: 'FLAT PACK', sub: 'Site office / camp unit',
+    area: '13.8 m²', open: '6055 × 2438 mm', height: '2591 mm',
+    panels: 2, fold: false, door: false, front: 'panels',
+    banner: '6 UNITS FIT ONE 40HQ CONTAINER' },
+  { key: 'detachable', slug: 'detachable', title: 'DETACHABLE', sub: 'Bolt-together panel frame',
+    area: '28 m²', open: '6055 × 2438 mm', height: '2591 mm',
+    panels: 2, fold: false, door: false, front: 'stacklines',
+    banner: 'STACKABLE UP TO 3 FLOORS' },
+  { key: 'ablution', slug: 'ablution', title: 'ABLUTION BLOCK', sub: 'Prefab toilet & shower',
+    area: '4 – 12 cubicles', open: '6055 × 2438 mm', height: '2591 mm',
+    panels: 3, fold: false, door: false, front: 'cubicles',
+    banner: 'PRE-INSTALLED PLUMBING & HEATERS' },
+  { key: 'site-office', slug: 'site-office', title: 'SITE OFFICE', sub: 'Kiosk / sales suite',
+    area: '13.8 – 28 m²', open: '6055 × 2438 mm', height: '2591 mm',
+    panels: 2, fold: false, door: false, front: 'glassfront',
+    banner: 'TEMPERED GLASS FRONT · AC READY' },
 ];
 
 /* ===========================================================================
@@ -155,42 +179,78 @@ function elevation(m) {
   // 地基钢梁
   body += rect(bx, by + bh, bw, 16, { fill: C.navyM, stroke: 'none' });
 
-  // 折叠缝 + 折叠板标识
-  for (let i = 1; i < m.panels; i++) {
-    const x = bx + pw * i;
-    body += line(x, by, x, by + bh, { stroke: C.accent, sw: 2, dash: '9 6' });
-  }
-  for (let i = 0; i < m.panels; i++) {
-    body += t(bx + pw * i + pw / 2, by + bh + 44, `PANEL ${i + 1}`, { size: 12, fill: C.muted, anchor: 'middle', ls: 1 });
+  // 折叠缝 + 折叠板标识（非折叠类产品用 fold:false 关掉）
+  if (m.fold !== false) {
+    for (let i = 1; i < m.panels; i++) {
+      const x = bx + pw * i;
+      body += line(x, by, x, by + bh, { stroke: C.accent, sw: 2, dash: '9 6' });
+    }
+    for (let i = 0; i < m.panels; i++) {
+      body += t(bx + pw * i + pw / 2, by + bh + 44, `PANEL ${i + 1}`, { size: 12, fill: C.muted, anchor: 'middle', ls: 1 });
+    }
   }
 
-  // 门（居中）
-  const dw = 74, dh = 168, dx = bx + bw / 2 - dw / 2, dy = by + bh - dh;
-  body += rect(dx, dy, dw, dh, { fill: C.paper, stroke: C.navy, sw: 2.4 });
-  body += line(dx + dw - 14, dy + 12, dx + dw - 14, dy + dh - 12, { stroke: C.muted, sw: 2 });
-  body += circle(dx + dw - 22, dy + dh / 2 + 26, 3, { fill: C.navy, stroke: 'none' });
-  body += `<g transform="translate(${dx + dw / 2 + 30},${dy + dh - 30})">${t(0, 0, 'ENTRY 900', { size: 11, fill: C.muted, anchor: 'middle' })}</g>`;
+  // 门（居中）——非折叠单元用 door:false 关掉
+  if (m.door !== false) {
+    const dw = 74, dh = 168, dx = bx + bw / 2 - dw / 2, dy = by + bh - dh;
+    body += rect(dx, dy, dw, dh, { fill: C.paper, stroke: C.navy, sw: 2.4 });
+    body += line(dx + dw - 14, dy + 12, dx + dw - 14, dy + dh - 12, { stroke: C.muted, sw: 2 });
+    body += circle(dx + dw - 22, dy + dh / 2 + 26, 3, { fill: C.navy, stroke: 'none' });
+    body += `<g transform="translate(${dx + dw / 2 + 30},${dy + dh - 30})">${t(0, 0, 'ENTRY 900', { size: 11, fill: C.muted, anchor: 'middle' })}</g>`;
+  }
 
-  // 窗
+  /* 立面开窗：按产品形态切换，四种都画在同一高度带内，互不叠加
+     - windows    : 默认两扇窗（折叠类）
+     - glazing    : 苹果舱窄幅落地玻璃（保持原样）
+     - glassfront : 办公/展厅整面玻璃幕墙
+     - cubicles   : 卫浴单元成排隔间门
+     - panels     : 平板打包的成叠板材
+     - stacklines : 可拆卸单元的层叠线 */
   const winY = by + 62, winH = 96;
-  m.panels > 1 && [-1, 1].forEach((s) => {
-    const wx = bx + bw / 2 + s * (pw * 0.85) - 46;
-    body += rect(wx, winY, 92, winH, { fill: '#eef5fd', stroke: C.navy, sw: 2.2 });
-    body += line(wx + 46, winY, wx + 46, winY + winH, { stroke: C.navy, sw: 1.4 });
-    body += line(wx, winY + winH / 2, wx + 92, winY + winH / 2, { stroke: C.navy, sw: 1.4 });
-  });
-  if (m.panels === 1) { // 苹果舱：整面落地玻璃 + 圆角
+  const front = m.front || (m.panels === 1 ? 'glazing' : 'windows');
+  if (front === 'windows') {
+    [-1, 1].forEach((s) => {
+      const wx = bx + bw / 2 + s * (pw * 0.85) - 46;
+      body += rect(wx, winY, 92, winH, { fill: '#eef5fd', stroke: C.navy, sw: 2.2 });
+      body += line(wx + 46, winY, wx + 46, winY + winH, { stroke: C.navy, sw: 1.4 });
+      body += line(wx, winY + winH / 2, wx + 92, winY + winH / 2, { stroke: C.navy, sw: 1.4 });
+    });
+  }
+  if (front === 'glazing') { // 苹果舱：窄幅落地玻璃 + 圆角
     body += rect(bx + 34, by + 46, 190, 168, { fill: '#eaf3fd', stroke: C.navy, sw: 2.4, rx: 10 });
     body += line(bx + 34 + 63, by + 46, bx + 34 + 63, by + 214, { stroke: C.navy, sw: 1.4 });
     body += line(bx + 34 + 126, by + 46, bx + 34 + 126, by + 214, { stroke: C.navy, sw: 1.4 });
+  }
+  if (front === 'glassfront') { // 整面玻璃幕墙
+    body += rect(bx + 34, winY - 14, bw - 68, winH + 28, { fill: '#eaf3fd', stroke: C.navy, sw: 2.4, rx: 6 });
+    for (let i = 1; i < 5; i++) {
+      const gx = bx + 34 + i * (bw - 68) / 5;
+      body += line(gx, winY - 14, gx, winY + winH + 14, { stroke: C.navy, sw: 1.3 });
+    }
+  }
+  if (front === 'cubicles') { // 成排隔间门
+    for (let i = 0; i < 4; i++) {
+      const cx0 = bx + 44 + i * 140;
+      body += rect(cx0, winY - 12, 118, winH + 24, { fill: C.paper, stroke: C.navy, sw: 2.2 });
+      body += circle(cx0 + 100, winY + winH / 2, 3.5, { fill: C.navy, stroke: 'none' });
+    }
+  }
+  if (front === 'panels') { // 成叠板材
+    for (let i = 0; i < 4; i++) {
+      body += rect(bx + 40, winY - 12 + i * 27, bw - 80, 18, { fill: C.navyM, stroke: C.navyL, sw: 1.2, opacity: 0.35 + i * 0.13 });
+    }
+  }
+  if (front === 'stacklines') { // 层叠线
+    body += line(bx, winY + 6, bx + bw, winY + 6, { stroke: C.accent, sw: 2.4, dash: '12 8' });
+    body += line(bx, winY + winH - 6, bx + bw, winY + winH - 6, { stroke: C.accent, sw: 2.4, dash: '12 8' });
   }
 
   // 底部总尺寸线
   body += dimH(bx, bx + bw, by + bh + 96, m.open.replace(/ mm/, ''), C.navy, 14);
   // 右侧高度尺寸
-  body += dimV(bx + bw + 46, by, by + bh, '2480 mm', C.accentD, 13);
-  // 顶部展开方向提示（居中，避开卡片左上角的角标）
-  body += `<g opacity="0.85">${t(bx + bw / 2, 50, '◀  EXPANDS 2.8×  IN 30 MINUTES  ▶', { size: 15, fill: C.accent, anchor: 'middle', ls: 2, weight: 700 })}</g>`;
+  body += dimV(bx + bw + 46, by, by + bh, m.height || '2480 mm', C.accentD, 13);
+  // 顶部提示（居中，避开卡片左上角的角标）——按产品类型可覆盖
+  body += `<g opacity="0.85">${t(bx + bw / 2, 50, m.banner || '◀  EXPANDS 2.8×  IN 30 MINUTES  ▶', { size: 15, fill: C.accent, anchor: 'middle', ls: 2, weight: 700 })}</g>`;
 
   // 型号标题条放在底部 —— 卡片/图库的角标在左上角，标题放顶部会被压住
   body += `<rect x="0" y="${H - 56}" width="${W}" height="56" fill="${C.navy}"/>`;
@@ -382,6 +442,9 @@ const POSTS = [
   { key: 'adu', label: 'ADU PERMITS FOR US HOMEOWNERS', tag: 'COMPLIANCE', accent: '#8baed8' },
   { key: 'compare', label: 'CONTAINER HOUSE VS TINY HOME', tag: 'COMPARISON', accent: '#ed8936' },
   { key: 'maintain', label: 'LIFESPAN & MAINTENANCE', tag: 'TECHNICAL', accent: '#f6a44b' },
+  // 原先 blog.html 的「保温材料怎么选」文章借用了 shipping 的图，同一页出现两张一样的图。
+  // 这里补一张它自己的头图。
+  { key: 'insulation', label: 'EPS, ROCK WOOL OR PU?', tag: 'TECHNICAL', accent: '#8baed8' },
 ];
 function blogThumb(p) {
   const W = 800, H = 450;
@@ -479,21 +542,61 @@ ${t(78, 68, 'EXPANDABLE CONTAINER HOUSE', { size: 12, fill: C.muted, ls: 1.6 })}
 </svg>`;
 }
 
-/* ---------- 输出 ---------- */
+/* ===========================================================================
+ * 10. 站点图标（方形房子图标，用于浏览器标签页）
+ * ========================================================================= */
+function favicon() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<rect width="64" height="64" rx="12" fill="${C.navy}"/>
+<path d="M32 11 L55 30 H9 Z" fill="${C.accent}"/>
+<rect x="16" y="30" width="32" height="23" fill="#ffffff"/>
+<rect x="27" y="38" width="10" height="15" fill="${C.navy}"/>
+</svg>`;
+}
+
+/* ===========================================================================
+ * 输出：按分类写入子目录
+ * ---------------------------------------------------------------------------
+ * 目录约定（新增一个商品 = 新增一个 products/<slug>/ 目录，互不影响）：
+ *   assets/img/icons/            品牌与站点图标（logo / favicon）
+ *   assets/img/home/             仅首页使用
+ *   assets/img/products/<slug>/  每个商品一个独立目录
+ *   assets/img/factory/          工厂与实力图（关于页 / 首页共用）
+ *   assets/img/projects/         客户案例
+ *   assets/img/blog/             博客头图
+ * ========================================================================= */
 const files = {
-  'logo.svg': logo(),
-  'hero-blueprint.svg': hero(),
-  'video-poster.svg': videoPoster(),
+  'icons/logo.svg': logo(),
+  'icons/favicon.svg': favicon(),
+  'home/hero-blueprint.svg': hero(),
+  'factory/workshop.svg': factory(FACTORY[0]),
+  'factory/line.svg': factory(FACTORY[1]),
+  'factory/yard.svg': factory(FACTORY[2]),
+  'factory/qc.svg': factory(FACTORY[3]),
+  'factory/video-poster.svg': videoPoster(),
 };
-MODELS.forEach((m) => { files[`product-${m.key}.svg`] = elevation(m); files[`floorplan-${m.key}.svg`] = floorPlan(m); });
-INTERIORS.forEach((it) => { files[`interior-${it.key}.svg`] = interior(it); });
-FACTORY.forEach((f) => { files[`factory-${f.key}.svg`] = factory(f); });
-PROJECTS.forEach((p) => { files[`project-${p.key}.svg`] = project(p); });
-POSTS.forEach((p) => { files[`blog-${p.key}.svg`] = blogThumb(p); });
+
+// 4 个折叠型号：cover + 户型图 + 4 张室内 + 1 张工厂，各自独立一份
+MODELS.forEach((m) => {
+  const dir = `products/${m.slug}`;
+  files[`${dir}/cover.svg`] = elevation(m);
+  files[`${dir}/floorplan.svg`] = floorPlan(m);
+  INTERIORS.forEach((it) => { files[`${dir}/interior-${it.key}.svg`] = interior(it); });
+  files[`${dir}/factory.svg`] = factory(FACTORY[0]);
+});
+
+// 4 个非折叠产品：只有一张立视图
+UNITS.forEach((u) => { files[`products/${u.slug}/cover.svg`] = elevation(u); });
+
+PROJECTS.forEach((p) => { files[`projects/${p.key}.svg`] = project(p); });
+POSTS.forEach((p) => { files[`blog/${p.key}.svg`] = blogThumb(p); });
 
 let n = 0;
-for (const [name, svg] of Object.entries(files)) {
-  writeFileSync(join(OUT, name), svg);
+for (const [rel, svg] of Object.entries(files)) {
+  const abs = join(OUT, rel);
+  mkdirSync(dirname(abs), { recursive: true });
+  writeFileSync(abs, svg);
   n++;
 }
-console.log(`✔ generated ${n} SVG placeholders -> ${OUT}`);
+console.log(`✔ generated ${n} SVG placeholders under ${OUT}`);
+

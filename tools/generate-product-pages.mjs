@@ -37,7 +37,6 @@ const MODELS = [
     code: '20E-2R1B',
     name: '20FT Expandable Container House',
     short: '20FT Expandable',
-    img: 'product-20ft',
     priceFrom: '$4,500',
     priceRange: '$4,500 – $7,200',
     priceNote: 'FOB China, standard configuration',
@@ -51,7 +50,7 @@ const MODELS = [
     badge: 'Best seller',
     metaTitle: '20FT Expandable Container House — 37.2 m², 2 Bed 1 Bath | from $4,500',
     metaDesc:
-      '20ft expandable container house: 37.2 m² internal, 2 bedrooms, 1 bathroom, folds to 5900×2260×2480 mm so two units fit one 40HQ. Factory-direct from $4,500, CE & ISO certified, 30-minute setup.',
+      '20ft expandable container house: 37.2 m², 2 bedrooms, 1 bathroom. Folds to 5900×2260×2480 mm so two units fit one 40HQ. FOB from $4,500.',
     hook:
       'The unit that made expandable houses popular: two of them share one container, which is why it lands cheaper per square metre than anything else we build.',
     overview: [
@@ -122,7 +121,6 @@ const MODELS = [
     code: '30E-3R1B',
     name: '30FT Expandable Container House',
     short: '30FT Expandable',
-    img: 'product-30ft',
     priceFrom: '$6,800',
     priceRange: '$6,800 – $9,900',
     priceNote: 'FOB China, standard configuration',
@@ -136,7 +134,7 @@ const MODELS = [
     badge: 'Granny flat favourite',
     metaTitle: '30FT Expandable Container House — 56.7 m², 3 Bed 1 Bath | from $6,800',
     metaDesc:
-      '30ft expandable container house: 56.7 m² internal, 3 bedrooms, 1 bathroom, 9 m clear span with no internal columns. Factory-direct from $6,800, CE & ISO certified, granny flat and ADU ready.',
+      '30ft expandable container house: 56.7 m², 3 bedrooms, 9 m clear span with no internal columns. FOB from $6,800, shipped worldwide.',
     hook:
       'Nine metres long and 56.7 m² inside — the size that fits most granny flat and secondary-dwelling rules while still giving a family three real bedrooms.',
     overview: [
@@ -207,7 +205,6 @@ const MODELS = [
     code: '40E-3R2B',
     name: '40FT Expandable Container House',
     short: '40FT Expandable',
-    img: 'product-40ft',
     priceFrom: '$8,900',
     priceRange: '$8,900 – $12,800',
     priceNote: 'FOB China, standard configuration',
@@ -221,7 +218,7 @@ const MODELS = [
     badge: 'Largest unit',
     metaTitle: '40FT Expandable Container House — 74.3 m², 3 Bed 2 Bath | from $8,900',
     metaDesc:
-      '40ft expandable container house: 74.3 m² internal, 3 bedrooms, 2 bathrooms and a walk-in store. Folds to 11800×2260×2480 mm. Factory-direct from $8,900, CE & ISO certified.',
+      '40ft expandable container house: 74.3 m², 3 bedrooms, 2 bathrooms and a walk-in store. Our largest single unit. FOB from $8,900.',
     hook:
       '74.3 m² with three bedrooms, two bathrooms and a walk-in store. This is the unit that stops feeling like a container and starts feeling like a house.',
     overview: [
@@ -293,7 +290,6 @@ const MODELS = [
     code: '5.8C-1R1B',
     name: 'Apple Cabin / Capsule House',
     short: 'Apple Cabin',
-    img: 'product-cabin',
     priceFrom: '$12,500',
     priceRange: '$12,500 – $18,900',
     priceNote: 'FOB China, hospitality specification',
@@ -307,7 +303,7 @@ const MODELS = [
     badge: 'Hospitality',
     metaTitle: 'Apple Cabin Capsule House — 12.8 m² Panoramic Studio | from $12,500',
     metaDesc:
-      'Apple cabin capsule house: 12.8 m² studio with full-height panoramic glazing, aluminium frame and a complete bathroom. Four units fit one 40HQ. Factory-direct from $12,500 for resorts and glamping sites.',
+      'Apple cabin capsule house: 12.8 m² studio with full-height panoramic glazing, aluminium frame and a complete bathroom. FOB from $12,500.',
     hook:
       'A capsule with one whole wall of glass. It exists because guests pay for the view, and a glamping pod that lets you see the valley outsells a room that does not.',
     overview: [
@@ -556,14 +552,16 @@ const INTERIOR_IMAGES = [
 ];
 
 function page(m) {
+  // 本商品自己的图片目录 —— 改这个商品的图不会影响任何别的商品
+  const D = `products/${m.id}`;
   const gallery = [
-    { src: `product-${m.img.replace('product-', '')}`, alt: `${m.name} elevation drawing`, cap: 'Front elevation' },
-    { src: `floorplan-${m.id.startsWith('apple') ? 'cabin' : m.id.replace('-expandable', '')}`, alt: `${m.name} floor plan`, cap: 'Floor plan' },
-    { src: 'interior-living', alt: `${m.name} living area`, cap: 'Living area' },
-    { src: 'interior-kitchen', alt: `${m.name} kitchen`, cap: 'Kitchen' },
-    { src: 'interior-bedroom', alt: `${m.name} bedroom`, cap: 'Bedroom' },
-    { src: 'interior-bathroom', alt: `${m.name} bathroom`, cap: 'Bathroom' },
-    { src: 'factory-workshop', alt: 'Factory workshop', cap: 'Factory' },
+    { src: `${D}/cover`,              alt: `${m.name} elevation drawing`, cap: 'Front elevation' },
+    { src: `${D}/floorplan`,          alt: `${m.name} floor plan`,        cap: 'Floor plan' },
+    { src: `${D}/interior-living`,    alt: `${m.name} living area`,       cap: 'Living area' },
+    { src: `${D}/interior-kitchen`,   alt: `${m.name} kitchen`,           cap: 'Kitchen' },
+    { src: `${D}/interior-bedroom`,   alt: `${m.name} bedroom`,           cap: 'Bedroom' },
+    { src: `${D}/interior-bathroom`,  alt: `${m.name} bathroom`,          cap: 'Bathroom' },
+    { src: `${D}/factory`,            alt: 'Factory workshop',            cap: 'Factory' },
   ];
 
   const relatedCards = m.related
@@ -572,7 +570,7 @@ function page(m) {
       (r) => `
         <article class="card card-hover reveal overflow-hidden">
           <div class="card-media aspect-[4/3]">
-            <img src="assets/img/${r.img}.svg" alt="${r.name}" loading="lazy">
+            <img src="assets/img/products/${r.id}/cover.svg" alt="${r.name}" loading="lazy">
           </div>
           <div class="p-5">
             <p class="model-code text-xs font-bold text-accent-600">${r.code}</p>
@@ -598,7 +596,8 @@ function page(m) {
     1) 直接改这个 HTML（简单直接，但重跑脚本会覆盖）
     2) 改脚本里的 MODELS 数据再重跑（适合同时改多个型号）
   【改联系方式】assets/js/site-config.js    【改颜色/字体】tailwind.config.js
-  【换图片】把 assets/img/*.svg 换成实拍图，保持 4:3 比例
+  【换图片】本页的图全部在 assets/img/products/${m.id}/ 目录里（cover / floorplan /
+            interior-* / factory），直接覆盖同名文件即可，不会影响其他型号
 =========================================================================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -609,7 +608,7 @@ function page(m) {
   <meta property="og:type" content="product">
   <meta property="og:title" content="${m.metaTitle}">
   <meta property="og:description" content="${m.metaDesc}">
-  <meta property="og:image" content="assets/img/${m.img}.svg">
+  <meta property="og:image" content="assets/img/products/${m.id}/cover.svg">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -617,7 +616,9 @@ function page(m) {
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tailwind.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/img/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/img/icons/apple-touch-icon.png">
 
   <!-- 结构化数据：让 Google 能展示价格和评价 -->
   <script type="application/ld+json">
@@ -865,7 +866,7 @@ ${m.layouts
     <div class="mt-8 grid gap-5 sm:grid-cols-2">
 ${INTERIOR_IMAGES.map(
   (i) => `      <figure class="card card-hover overflow-hidden reveal">
-        <div class="card-media aspect-[4/3]"><img src="assets/img/${i.src}.svg" alt="${m.name} — ${i.cap}" loading="lazy"></div>
+        <div class="card-media aspect-[4/3]"><img src="assets/img/products/${m.id}/${i.src}.svg" alt="${m.name} — ${i.cap}" loading="lazy"></div>
         <figcaption class="p-4">
           <p class="font-display text-base font-bold text-brand-900">${i.cap}</p>
           <p class="mt-1 text-xs text-slate-500">${i.sub}</p>

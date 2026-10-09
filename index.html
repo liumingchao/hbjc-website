@@ -9,12 +9,15 @@
     · 颜色 / 字体 → tailwind.config.js（跑 npm run build:css）
     · 按钮、卡片、表单等组件样式 → assets/css/style.css
     · 交互（悬浮 WhatsApp、筛选、表单校验）→ assets/js/main.js
-  【换图片】把 assets/img/xxx.svg 换成自己的照片即可，页面已用 aspect-[..] 锁比例
+  【换图片】图片按分类放在 assets/img/ 下：
+              products/&lt;型号&gt;/（每个商品一个独立目录）、factory/、projects/、blog/、home/、icons/
+              换某张图 → 直接覆盖同名文件即可；页面已用 aspect-[..] 锁比例，不会跳版
+              加新产品 → 新建 products/&lt;型号&gt;/ 目录，然后在 HTML 里引用，互不影响别的商品
 =========================================================================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Expandable Container House Manufacturer | Factory Direct from $4,500 | 杰诚 HOUSE</title>
-  <meta name="description" content="We manufacture 20ft / 30ft / 40ft expandable container houses and apple cabins. Fully assembled in factory, 30-minute installation, CE &amp; ISO certified, shipping to 60+ countries. Get a factory-direct quote in 12 hours.">
+  <meta name="description" content="Factory-direct expandable container houses from $4,500. 95% pre-built, 30-min setup, shipped worldwide. 20ft/30ft/40ft models with custom layouts. Get a quote in 12 hours.">
   <meta name="keywords" content="expandable container house, prefab container home, 20ft expandable house, 40ft expandable container house, apple cabin, flat pack container house, granny flat, ADU">
   <link rel="canonical" href="https://www.example-containerhouse.com/">
 
@@ -22,7 +25,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Expandable Container House Manufacturer | Factory Direct from $4,500">
   <meta property="og:description" content="20ft / 30ft / 40ft expandable container houses, 30-minute installation, CE &amp; ISO certified. Exported to 60+ countries.">
-  <meta property="og:image" content="assets/img/hero-blueprint.svg">
+  <meta property="og:image" content="assets/img/home/hero-blueprint.svg">
   <meta property="og:url" content="https://www.example-containerhouse.com/">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -34,7 +37,9 @@
   <!-- 全站共用样式：tailwind.css 是编译产物，style.css 是自定义组件 -->
   <link rel="stylesheet" href="assets/css/tailwind.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/img/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/img/icons/apple-touch-icon.png">
 
   <!-- 结构化数据：帮助 Google 展示公司信息 -->
   <script type="application/ld+json">
@@ -43,7 +48,7 @@
     "@type": "Organization",
     "name": "杰诚 Modular House Co., Ltd.",
     "url": "https://www.example-containerhouse.com/",
-    "logo": "https://www.example-containerhouse.com/assets/img/logo.svg",
+    "logo": "https://www.example-containerhouse.com/assets/img/icons/logo.svg",
     "description": "Manufacturer of expandable container houses, flat pack container houses and apple cabins.",
     "address": { "@type": "PostalAddress", "addressLocality": "Shijiazhuang", "addressRegion": "Hebei", "addressCountry": "CN" },
     "contactPoint": [{ "@type": "ContactPoint", "contactType": "sales", "telephone": "+86-138-0000-0000", "availableLanguage": ["en", "zh"] }]
@@ -167,7 +172,7 @@
      01 · HERO —— 大图 + 核心卖点 + 快速询价
 ====================================================================== -->
 <section class="relative isolate overflow-hidden bg-brand-900">
-  <img src="assets/img/hero-blueprint.svg" alt="Expandable container house engineering elevation drawing" class="absolute inset-0 h-full w-full object-cover opacity-60" fetchpriority="high">
+  <img src="assets/img/home/hero-blueprint.svg" alt="Expandable container house engineering elevation drawing" class="absolute inset-0 h-full w-full object-cover opacity-60" fetchpriority="high">
   <div class="absolute inset-0 bg-gradient-to-r from-brand-950/95 via-brand-900/80 to-brand-900/40"></div>
 
   <div class="relative mx-auto max-w-8xl px-5 py-16 lg:px-8 lg:py-24">
@@ -489,7 +494,7 @@
       <article class="card card-hover reveal overflow-hidden">
         <div class="card-media aspect-[4/3]">
           <span class="card-badge">Best seller</span>
-          <img src="assets/img/product-20ft.svg" alt="20ft expandable container house — front elevation with dimensions" loading="lazy">
+          <img src="assets/img/products/20ft-expandable/cover.svg" alt="20ft expandable container house — front elevation with dimensions" loading="lazy">
         </div>
         <div class="p-5">
           <p class="model-code text-xs font-bold text-accent-600">Model 20E-2R1B</p>
@@ -510,7 +515,7 @@
 
       <article class="card card-hover reveal overflow-hidden">
         <div class="card-media aspect-[4/3]">
-          <img src="assets/img/product-30ft.svg" alt="30ft expandable container house — front elevation with dimensions" loading="lazy">
+          <img src="assets/img/products/30ft-expandable/cover.svg" alt="30ft expandable container house — front elevation with dimensions" loading="lazy">
         </div>
         <div class="p-5">
           <p class="model-code text-xs font-bold text-accent-600">Model 30E-3R1B</p>
@@ -532,7 +537,7 @@
       <article class="card card-hover reveal overflow-hidden">
         <div class="card-media aspect-[4/3]">
           <span class="card-badge">Granny flat</span>
-          <img src="assets/img/product-40ft.svg" alt="40ft expandable container house — front elevation with dimensions" loading="lazy">
+          <img src="assets/img/products/40ft-expandable/cover.svg" alt="40ft expandable container house — front elevation with dimensions" loading="lazy">
         </div>
         <div class="p-5">
           <p class="model-code text-xs font-bold text-accent-600">Model 40E-3R2B</p>
@@ -554,7 +559,7 @@
       <article class="card card-hover reveal overflow-hidden">
         <div class="card-media aspect-[4/3]">
           <span class="card-badge bg-brand-700">Hospitality</span>
-          <img src="assets/img/product-cabin.svg" alt="Apple cabin capsule house — front elevation with panoramic glazing" loading="lazy">
+          <img src="assets/img/products/apple-cabin/cover.svg" alt="Apple cabin capsule house — front elevation with panoramic glazing" loading="lazy">
         </div>
         <div class="p-5">
           <p class="model-code text-xs font-bold text-accent-600">Model 5.8C-1R1B</p>
@@ -614,9 +619,9 @@
 
       <!-- 工厂照片网格 -->
       <div class="grid grid-cols-2 gap-3 reveal">
-        <img class="col-span-2 aspect-[16/9] w-full rounded-lg object-cover" src="assets/img/factory-workshop.svg" alt="Container house manufacturing workshop" loading="lazy">
-        <img class="aspect-[4/3] w-full rounded-lg object-cover" src="assets/img/factory-line.svg" alt="Automatic panel production line" loading="lazy">
-        <img class="aspect-[4/3] w-full rounded-lg object-cover" src="assets/img/factory-yard.svg" alt="Container house yard and loading area" loading="lazy">
+        <img class="col-span-2 aspect-[16/9] w-full rounded-lg object-cover" src="assets/img/factory/workshop.svg" alt="Container house manufacturing workshop" loading="lazy">
+        <img class="aspect-[4/3] w-full rounded-lg object-cover" src="assets/img/factory/line.svg" alt="Automatic panel production line" loading="lazy">
+        <img class="aspect-[4/3] w-full rounded-lg object-cover" src="assets/img/factory/yard.svg" alt="Container house yard and loading area" loading="lazy">
       </div>
     </div>
   </div>
@@ -642,7 +647,7 @@
       <a href="projects.html" class="card card-hover reveal group overflow-hidden">
         <div class="card-media aspect-[4/3]">
           <span class="card-badge">Australia</span>
-          <img src="assets/img/project-au.svg" alt="30ft expandable container house installed as a granny flat in Sydney" loading="lazy">
+          <img src="assets/img/projects/au.svg" alt="30ft expandable container house installed as a granny flat in Sydney" loading="lazy">
         </div>
         <div class="p-5">
           <p class="model-code text-xs font-bold text-accent-600">30FT Expandable · 2 units</p>
@@ -655,7 +660,7 @@
       <a href="projects.html" class="card card-hover reveal group overflow-hidden">
         <div class="card-media aspect-[4/3]">
           <span class="card-badge">Saudi Arabia</span>
-          <img src="assets/img/project-sa.svg" alt="40ft expandable container houses used as a site camp in Riyadh" loading="lazy">
+          <img src="assets/img/projects/sa.svg" alt="40ft expandable container houses used as a site camp in Riyadh" loading="lazy">
         </div>
         <div class="p-5">
           <p class="model-code text-xs font-bold text-accent-600">40FT Expandable · 24 units</p>
@@ -668,7 +673,7 @@
       <a href="projects.html" class="card card-hover reveal group overflow-hidden">
         <div class="card-media aspect-[4/3]">
           <span class="card-badge">New Zealand</span>
-          <img src="assets/img/project-nz.svg" alt="Apple cabin capsule houses used as resort units in Queenstown" loading="lazy">
+          <img src="assets/img/projects/nz.svg" alt="Apple cabin capsule houses used as resort units in Queenstown" loading="lazy">
         </div>
         <div class="p-5">
           <p class="model-code text-xs font-bold text-accent-600">Apple Cabin · 6 units</p>
@@ -775,7 +780,7 @@
       <article class="card card-hover reveal overflow-hidden">
         <a href="blog-post.html" class="block">
           <div class="card-media aspect-[16/9]">
-            <img src="assets/img/blog-shipping.svg" alt="Container shipping costs for expandable houses" loading="lazy">
+            <img src="assets/img/blog/shipping.svg" alt="Container shipping costs for expandable houses" loading="lazy">
           </div>
           <div class="p-5">
             <div class="flex items-center gap-3 text-xs">
@@ -794,7 +799,7 @@
       <article class="card card-hover reveal overflow-hidden">
         <a href="blog-post.html" class="block">
           <div class="card-media aspect-[16/9]">
-            <img src="assets/img/blog-install.svg" alt="Step by step expandable house installation" loading="lazy">
+            <img src="assets/img/blog/install.svg" alt="Step by step expandable house installation" loading="lazy">
           </div>
           <div class="p-5">
             <div class="flex items-center gap-3 text-xs">
@@ -813,7 +818,7 @@
       <article class="card card-hover reveal overflow-hidden">
         <a href="blog-post.html" class="block">
           <div class="card-media aspect-[16/9]">
-            <img src="assets/img/blog-granny.svg" alt="Granny flat rules in Australia" loading="lazy">
+            <img src="assets/img/blog/granny.svg" alt="Granny flat rules in Australia" loading="lazy">
           </div>
           <div class="p-5">
             <div class="flex items-center gap-3 text-xs">

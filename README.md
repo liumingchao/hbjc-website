@@ -42,6 +42,8 @@ npm run watch:css        # 开发时持续监听
 ├── blog.html                        博客列表（置顶文 + 分类筛选 + 6 篇占位文章 + 订阅）
 ├── blog-post.html                   单篇文章模板（含正文排版样式示例）
 │
+├── favicon.ico                      ← 站点图标（16/32/48 多尺寸，必须放根目录）
+│
 ├── assets/
 │   ├── css/
 │   │   ├── tailwind.css             ← 编译产物，不要手改
@@ -50,15 +52,50 @@ npm run watch:css        # 开发时持续监听
 │   ├── js/
 │   │   ├── site-config.js           ← 【改这个文件就能改全站联系方式】
 │   │   └── main.js                  ← 全站交互（10 个模块，靠 data-* 自动挂载）
-│   └── img/                         34 张 SVG 占位图（工程蓝图风格，替换成实拍照片即可）
+│   └── img/                         ← 占位图按用途分类，见下方「图片目录」
+│       ├── icons/                   品牌与站点图标
+│       │   ├── logo.svg             导航/页脚 logo 的文件版（页面内用的是 inline SVG）
+│       │   ├── favicon.svg          可缩放站点图标（房子）
+│       │   └── apple-touch-icon.png iOS 桌面图标（180×180）
+│       ├── home/                    仅首页用的图（hero 蓝图）
+│       ├── products/                ★ 每个商品一个独立目录
+│       │   ├── 20ft-expandable/     cover / floorplan / interior-×4 / factory
+│       │   ├── 30ft-expandable/     同上
+│       │   ├── 40ft-expandable/     同上
+│       │   ├── apple-cabin/         同上
+│       │   ├── flat-pack/           只有 cover（没有详情页）
+│       │   ├── detachable/          只有 cover
+│       │   ├── ablution/            只有 cover
+│       │   └── site-office/         只有 cover
+│       ├── factory/                 工厂与实力图（about + 首页共用）
+│       ├── projects/                客户案例（9 张，文件名 = 国家代码）
+│       └── blog/                    博客头图（文件名 = 文章 slug）
 │
 ├── tools/
-│   ├── generate-placeholders.mjs    ← 生成 assets/img 下的占位图
-│   └── generate-product-pages.mjs   ← 生成 4 个产品详情页（结构一致，只有参数不同）
+│   ├── generate-placeholders.mjs    ← 生成 assets/img 下的全部占位图（按分类输出）
+│   ├── generate-product-pages.mjs   ← 生成 4 个产品详情页（结构一致，只有参数不同）
+│   └── make-favicon.py              ← 生成根目录 favicon.ico + apple-touch-icon.png
 │
 ├── tailwind.config.js               品牌色 / 字体 / 阴影
 └── package.json
 ```
+
+### 图片目录（重要）
+
+**核心原则：一个商品 = 一个目录，改一个商品的图绝不会影响别的商品。**
+
+| 想做的事 | 怎么做 |
+|---|---|
+| 换某一张图 | 直接覆盖 `assets/img/` 下的同名文件。想用 jpg 就顺手改 HTML 里的后缀 |
+| 换某个商品的实拍图 | 只动 `assets/img/products/<型号>/` 里的文件，其他型号不受影响 |
+| **加一个新商品** | ① 新建 `assets/img/products/<新型号>/`，放 `cover.svg`（列表卡用）+ 需要的话 `floorplan.svg`、`interior-*.svg`、`factory.svg`；② 在 `products.html` 复制一张产品卡，把 `src` 指到新目录 |
+| 重新生成占位图 | `node tools/generate-placeholders.mjs`（会按同样的目录结构重写全部 56 张） |
+| 重新生成图标 | `python3 tools/make-favicon.py` |
+
+> 为什么要按商品分目录：改造前 8 个产品卡只有 4 张图、4 个产品详情页的室内图完全共用 ——
+> 换一张 20ft 的实景照，30ft / 40ft / 苹果舱三个页面会跟着一起变。现在每个型号目录独立，
+> 目前 4 个折叠型号的室内图内容还是一样的（占位图本来就只有一套），但**已经解耦**，可以逐个替换。
+
 
 ---
 
@@ -138,17 +175,21 @@ formMethod: 'POST',
 ## 5. 上线前必做清单
 
 - [ ] `site-config.js`：换 WhatsApp 号、电话、邮箱、地址、`siteUrl`、`mapEmbedUrl`
-- [x] **品牌名已设为 `杰诚 HOUSE`**（公司全称 `杰诚 Modular House Co., Ltd.`）。如需再改，全局替换这两个词即可：共 11 个页面、`assets/js/site-config.js`、两个生成脚本、`assets/img/logo.svg` 与 7 个占位 SVG
+- [x] **品牌名已设为 `杰诚 HOUSE`**（公司全称 `杰诚 Modular House Co., Ltd.`）。如需再改，全局替换这两个词即可：共 11 个页面、`assets/js/site-config.js`、两个生成脚本、`assets/img/icons/logo.svg` 与 `assets/img/home/hero-blueprint.svg`
 - [ ] **替换全部占位内容**：价格（$4,500 等）、工厂数据（16 年 / 52,000 m² / 5,000 台）、认证名称、案例国家与客户评价 —— 这些是按行业常识写的演示数据，**必须换成你们自己的真实数据**，否则对外承诺会有法律风险
 - [ ] 产品参数（尺寸 / 荷载 / 材料）逐个核对，替换成实际生产规格
-- [ ] 图片换成实拍照片（建议 WebP，单张 < 200 KB）
+- [ ] 图片换成实拍照片（建议 WebP，单张 < 200 KB；按 `assets/img/products/<型号>/` 分目录逐个替换）
 - [ ] 表单 `formEndpoint` 接上真实接口并测一次
 - [ ] 每页的 `canonical` / `og:url` / `og:image` 换成真实域名
-- [ ] 把 `assets/img/logo.svg` 换成真实 logo（导航和页脚里的 logo 是 inline SVG，需同步改）
+- [ ] 把 `assets/img/icons/logo.svg` 和根目录 `favicon.ico` 换成真实 logo（导航和页脚里的 logo 是 inline SVG，需同步改）
 
 ## 6. 其他说明
 
 - **SEO 已预埋**：每页 title / description / canonical / OG 标签；首页有 `Organization` 结构化数据；产品页有 `Product`（含价格区间）与 `FAQPage` 结构化数据。
+- **`meta description` 全部控制在 160 字符以内**（Google 约在 155–160 字符处截断，超长会被改写或截断，反而显示不出想要的文案）。
+  首页那条目前是 171 字符，属有意保留的版本，介意的话可自行压到 160 以内。
+- **站点图标**：根目录 `favicon.ico`（16/32/48）+ `assets/img/icons/favicon.svg` + `apple-touch-icon.png`。
+  `favicon.ico` 必须在站点根目录，浏览器才会默认请求到；只给 SVG 图标的话 Safari 不认，标签页会空白。
 - **无障碍**：跳转链接、`aria-current`、`aria-expanded`、FAQ 用 `<button>` + `aria-expanded`，表单 label 全部关联。
 - **打印**：`@media print` 已隐藏导航、悬浮按钮和底部操作条。
 - **减少动效**：`prefers-reduced-motion` 下关闭全部动画。
