@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ===========================================================================
+  products.html —— 产品列表页
+  · 新增产品：复制一个 <article data-cat="..."> 卡片，改图、改参数、改链接
+  · 筛选按钮：data-filter="值" 必须与卡片 data-cat 里的词一致（空格可放多个）
+=========================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expandable Container House Models &amp; Prices | 20FT / 30FT / 40FT / Apple Cabin</title>
+  <meta name="description" content="Compare all expandable container house models side by side: 20ft, 30ft, 40ft expandable houses and apple cabins. Full specification table, loading quantity and factory-direct starting prices.">
+  <link rel="canonical" href="https://www.example-containerhouse.com/products.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+</head>
+
+<body class="bg-white font-sans antialiased">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- 顶部信息条 -->
+<div class="topbar hidden lg:block">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8 h-9 flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <a data-href="phone" href="tel:" class="flex items-center gap-1.5 transition hover:text-white">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span data-site="phone">+86 138 0000 0000</span>
+      </a>
+      <a data-href="email" href="mailto:" class="flex items-center gap-1.5 transition hover:text-white">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        <span data-site="email">sales@example-containerhouse.com</span>
+      </a>
+      <span class="hidden xl:flex items-center gap-1.5">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span data-site="hours">Mon – Sat 08:30 – 18:00 (GMT+8)</span>
+      </span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span>CE · ISO 9001 · SGS Audited Factory</span>
+      <span class="h-3.5 w-px bg-brand-600"></span>
+      <span>Shipping to 60+ countries</span>
+    </div>
+  </div>
+</div>
+
+<!-- 主导航 -->
+<header class="site-header">
+  <div class="mx-auto max-w-8xl px-4 sm:px-5 lg:px-8">
+    <div class="flex h-16 items-center gap-2 sm:gap-4 lg:h-[4.25rem]">
+      <a href="index.html" class="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5" aria-label="杰诚 HOUSE — home">
+        <svg class="h-5 w-auto sm:h-[26px]" viewBox="0 0 64 40" aria-hidden="true">
+          <rect x="4" y="14" width="56" height="24" fill="none" stroke="#1a365d" stroke-width="3"/>
+          <path d="M0 14 L32 2 L64 14" fill="none" stroke="#ed8936" stroke-width="3" stroke-linejoin="round"/>
+          <line x1="24" y1="14" x2="24" y2="38" stroke="#1a365d" stroke-width="2.5" stroke-dasharray="5 4"/>
+          <line x1="45" y1="14" x2="45" y2="38" stroke="#1a365d" stroke-width="2.5" stroke-dasharray="5 4"/>
+        </svg>
+        <span class="leading-none">
+          <span class="block font-display text-[1.15rem] font-bold tracking-wide text-brand-900 sm:text-[1.3rem]">杰诚 HOUSE</span>
+          <span class="mt-0.5 hidden text-[.58rem] font-semibold tracking-[.16em] text-slate-500 sm:block">EXPANDABLE CONTAINER HOUSE</span>
+        </span>
+      </a>
+
+      <nav class="ml-6 hidden items-center gap-7 lg:flex" aria-label="Main">
+        <a class="nav-link" href="index.html">Home</a>
+        <div class="nav-drop-wrap">
+          <a class="nav-link" href="products.html" aria-current="page">
+            Products
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="nav-drop">
+            <p class="drop-head">Expandable Series</p>
+            <a href="product-20ft-expandable.html">20FT Expandable Container House</a>
+            <a href="product-30ft-expandable.html">30FT Expandable Container House</a>
+            <a href="product-40ft-expandable.html">40FT Expandable Container House</a>
+            <p class="drop-head">Other Series</p>
+            <a href="product-apple-cabin.html">Apple Cabin / Capsule House</a>
+            <a href="products.html">View all products →</a>
+          </div>
+        </div>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="blog.html">Blog</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-2 sm:gap-3">
+        <a data-href="whatsapp" href="#" class="hidden items-center gap-2 text-sm font-semibold text-brand-800 transition hover:text-accent-600 xl:flex">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#25d366]"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.37 2.98 1.17 3.09.78 3.65.73.56-.05 1.81-.74 2.06-1.45.25-.71.25-1.32.17-1.45-.07-.13-.27-.2-.57-.35zM12.04 21.5a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.51 0 4.88.98 6.65 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.42 9.41z"/></svg>
+          WhatsApp
+        </a>
+        <a href="contact.html" class="btn btn-accent btn-sm px-3 sm:px-4 lg:px-5">Request Quote</a>
+        <button class="burger lg:hidden -mr-1 p-2" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-panel border-t border-[#e5e9f0] lg:hidden" id="mobilePanel">
+    <nav class="px-5 pb-6 pt-2" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="products.html">All Products</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-20ft-expandable.html">— 20FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-30ft-expandable.html">— 30FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-40ft-expandable.html">— 40FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-apple-cabin.html">— Apple Cabin</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="mt-5 grid grid-cols-2 gap-2">
+        <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" href="#">WhatsApp</a>
+        <a class="btn btn-accent btn-sm" href="contact.html">Request Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =====================================================================
+     页头
+====================================================================== -->
+<section class="bg-blueprint py-12 lg:py-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> <span class="mx-1.5">/</span> <span aria-current="page">Products</span>
+    </nav>
+    <h1 class="section-title section-title-light mt-4 text-[2rem] lg:text-[2.9rem]">Expandable Container House Models</h1>
+    <p class="mt-4 max-w-3xl leading-relaxed text-brand-100">
+      Four standard models, one shared steel system. Pick the size that matches your footprint, then choose the
+      layout, insulation and sanitary spec — every unit is built to your drawing, not to a fixed catalogue.
+      <strong class="text-white">Prices below are factory-direct FOB China, MOQ 1 unit.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================================
+     筛选 + 产品网格
+====================================================================== -->
+<section class="bg-white py-12 lg:py-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+
+    <!-- 筛选按钮：data-filter 与卡片 data-cat 对应 -->
+    <div class="flex flex-wrap items-center gap-2" data-filter-group="products" role="group" aria-label="Filter products">
+      <button class="filter-tab is-active" data-filter="all" type="button">All models</button>
+      <button class="filter-tab" data-filter="expandable" type="button">Expandable houses</button>
+      <button class="filter-tab" data-filter="cabin" type="button">Apple cabins</button>
+      <button class="filter-tab" data-filter="other" type="button">Other units</button>
+      <span class="ml-auto text-sm text-slate-500"><span data-filter-count="products">8</span> products</span>
+    </div>
+
+    <!-- 产品卡片网格 -->
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-filter-target="products">
+
+      <!-- 20FT -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="expandable">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Best seller</span>
+          <img src="assets/img/product-20ft.svg" alt="20ft expandable container house front elevation" loading="lazy">
+        </div>
+        <div class="flex h-full flex-col p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model 20E-2R1B</p>
+          <h2 class="mt-1.5 font-display text-[1.4rem] font-bold leading-tight text-brand-900">
+            <a class="transition hover:text-accent-600" href="product-20ft-expandable.html">20FT Expandable Container House</a>
+          </h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            The standard entry unit: 37.2 m², two bedrooms, full wet bathroom. Two fit one 40HQ container, which makes
+            it the cheapest model per square metre to land.
+          </p>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>37.2 m² (400 ft²)</dd></div>
+            <div><dt>Folded size</dt><dd>5900 × 2260 × 2480 mm</dd></div>
+            <div><dt>Expanded size</dt><dd>5900 × 6300 mm</dd></div>
+            <div><dt>Layout</dt><dd>2 Bed · 1 Bath · Kitchen</dd></div>
+            <div><dt>Loading</dt><dd>2 units / 40HQ</dd></div>
+          </dl>
+          <div class="mt-auto pt-5">
+            <div class="flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+              <span class="price-tag text-[1.6rem]">$4,500<small>starting from, FOB</small></span>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <a class="btn btn-outline btn-sm" href="product-20ft-expandable.html">View details</a>
+              <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" data-wa-text="Hi, please quote the 20FT expandable container house (37.2 m²)." href="#">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 30FT -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="expandable">
+        <div class="card-media aspect-[4/3]">
+          <img src="assets/img/product-30ft.svg" alt="30ft expandable container house front elevation" loading="lazy">
+        </div>
+        <div class="flex h-full flex-col p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model 30E-3R1B</p>
+          <h2 class="mt-1.5 font-display text-[1.4rem] font-bold leading-tight text-brand-900">
+            <a class="transition hover:text-accent-600" href="product-30ft-expandable.html">30FT Expandable Container House</a>
+          </h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            56.7 m² of column-free living. The usual pick for a granny flat or a family home with three bedrooms and a
+            proper dining zone.
+          </p>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>56.7 m² (610 ft²)</dd></div>
+            <div><dt>Folded size</dt><dd>9000 × 2260 × 2480 mm</dd></div>
+            <div><dt>Expanded size</dt><dd>9000 × 6300 mm</dd></div>
+            <div><dt>Layout</dt><dd>3 Bed · 1 Bath · Kitchen</dd></div>
+            <div><dt>Loading</dt><dd>1–2 units / 40HQ</dd></div>
+          </dl>
+          <div class="mt-auto pt-5">
+            <div class="flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+              <span class="price-tag text-[1.6rem]">$6,800<small>starting from, FOB</small></span>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <a class="btn btn-outline btn-sm" href="product-30ft-expandable.html">View details</a>
+              <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" data-wa-text="Hi, please quote the 30FT expandable container house (56.7 m²)." href="#">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 40FT -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="expandable">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Largest</span>
+          <img src="assets/img/product-40ft.svg" alt="40ft expandable container house front elevation" loading="lazy">
+        </div>
+        <div class="flex h-full flex-col p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model 40E-3R2B</p>
+          <h2 class="mt-1.5 font-display text-[1.4rem] font-bold leading-tight text-brand-900">
+            <a class="transition hover:text-accent-600" href="product-40ft-expandable.html">40FT Expandable Container House</a>
+          </h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Our biggest single unit: 74.3 m², three bedrooms, two bathrooms and a walk-in store — the closest thing to
+            a small conventional house.
+          </p>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>74.3 m² (800 ft²)</dd></div>
+            <div><dt>Folded size</dt><dd>11800 × 2260 × 2480 mm</dd></div>
+            <div><dt>Expanded size</dt><dd>11800 × 6300 mm</dd></div>
+            <div><dt>Layout</dt><dd>3 Bed · 2 Bath · Store</dd></div>
+            <div><dt>Loading</dt><dd>1 unit / 40HQ</dd></div>
+          </dl>
+          <div class="mt-auto pt-5">
+            <div class="flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+              <span class="price-tag text-[1.6rem]">$8,900<small>starting from, FOB</small></span>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <a class="btn btn-outline btn-sm" href="product-40ft-expandable.html">View details</a>
+              <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" data-wa-text="Hi, please quote the 40FT expandable container house (74.3 m²)." href="#">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Apple Cabin -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="cabin">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge bg-brand-700">Hospitality</span>
+          <img src="assets/img/product-cabin.svg" alt="Apple cabin capsule house front elevation" loading="lazy">
+        </div>
+        <div class="flex h-full flex-col p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model 5.8C-1R1B</p>
+          <h2 class="mt-1.5 font-display text-[1.4rem] font-bold leading-tight text-brand-900">
+            <a class="transition hover:text-accent-600" href="product-apple-cabin.html">Apple Cabin / Capsule House</a>
+          </h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            A rounded capsule with full-height glazing on one side. Bought by resorts, glamping sites and homeowners
+            who want a garden studio that does not look like a container.
+          </p>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>12.8 m² (138 ft²)</dd></div>
+            <div><dt>Overall size</dt><dd>5800 × 2200 × 2500 mm</dd></div>
+            <div><dt>Layout</dt><dd>Studio · 1 Bath</dd></div>
+            <div><dt>Loading</dt><dd>4 units / 40HQ</dd></div>
+          </dl>
+          <div class="mt-auto pt-5">
+            <div class="flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+              <span class="price-tag text-[1.6rem]">$12,500<small>starting from, FOB</small></span>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <a class="btn btn-outline btn-sm" href="product-apple-cabin.html">View details</a>
+              <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" data-wa-text="Hi, please quote the Apple Cabin capsule house (12.8 m²)." href="#">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Flat pack -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="other">
+        <div class="card-media aspect-[4/3]">
+          <img src="assets/img/product-20ft.svg" alt="Flat pack container house" loading="lazy">
+        </div>
+        <div class="flex h-full flex-col p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model FP-20</p>
+          <h2 class="mt-1.5 font-display text-[1.4rem] font-bold leading-tight text-brand-900">Flat Pack Container House</h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Not expandable — but 6 units fit one 40HQ, so it is the cheapest way to ship volume. Ideal for site
+            offices, canteens and single-room accommodation camps.
+          </p>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>13.8 m² (149 ft²) per unit</dd></div>
+            <div><dt>Loading</dt><dd>6 units / 40HQ</dd></div>
+            <div><dt>Assembly</dt><dd>2 workers, 1 day per unit</dd></div>
+          </dl>
+          <div class="mt-auto pt-5">
+            <div class="flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+              <span class="price-tag text-[1.6rem]">$1,890<small>starting from, FOB</small></span>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <a class="btn btn-outline btn-sm" href="contact.html">Request price</a>
+              <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" data-wa-text="Hi, please quote flat pack container houses (FP-20)." href="#">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Detachable -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="other">
+        <div class="card-media aspect-[4/3]">
+          <img src="assets/img/product-40ft.svg" alt="Detachable container house" loading="lazy">
+        </div>
+        <div class="flex h-full flex-col p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model DT-40</p>
+          <h2 class="mt-1.5 font-display text-[1.4rem] font-bold leading-tight text-brand-900">Detachable Container House</h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Flat-pack panels, bolt-together frame. Stackable to three floors and relocatable, which is why mining and
+            infrastructure contractors keep coming back to it.
+          </p>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>28 m² (301 ft²) per module</dd></div>
+            <div><dt>Stacking</dt><dd>Up to 3 floors</dd></div>
+            <div><dt>Loading</dt><dd>4 units / 40HQ</dd></div>
+          </dl>
+          <div class="mt-auto pt-5">
+            <div class="flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+              <span class="price-tag text-[1.6rem]">$2,650<small>starting from, FOB</small></span>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <a class="btn btn-outline btn-sm" href="contact.html">Request price</a>
+              <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" data-wa-text="Hi, please quote detachable container houses (DT-40)." href="#">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Public toilet / ablution -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="other">
+        <div class="card-media aspect-[4/3]">
+          <img src="assets/img/product-30ft.svg" alt="Prefabricated ablution and toilet block" loading="lazy">
+        </div>
+        <div class="flex h-full flex-col p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model AB-30</p>
+          <h2 class="mt-1.5 font-display text-[1.4rem] font-bold leading-tight text-brand-900">Prefab Toilet &amp; Ablution Block</h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Multi-cubicle sanitary block with pre-installed plumbing, water tanks and heaters. Usually ordered
+            alongside a camp because it ships in the same container as the accommodation.
+          </p>
+          <dl class="spec-list mt-4">
+            <div><dt>Cubicles</dt><dd>4 – 12 per unit</dd></div>
+            <div><dt>Finish</dt><dd>Anti-slip floor, PVC wall panels</dd></div>
+            <div><dt>Loading</dt><dd>Depends on cubicle count</dd></div>
+          </dl>
+          <div class="mt-auto pt-5">
+            <div class="flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+              <span class="price-tag text-[1.6rem]">$3,400<small>starting from, FOB</small></span>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <a class="btn btn-outline btn-sm" href="contact.html">Request price</a>
+              <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" data-wa-text="Hi, please quote a prefab toilet / ablution block." href="#">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Office / shop -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="other">
+        <div class="card-media aspect-[4/3]">
+          <img src="assets/img/product-cabin.svg" alt="Prefabricated site office and shop unit" loading="lazy">
+        </div>
+        <div class="flex h-full flex-col p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model OF-20</p>
+          <h2 class="mt-1.5 font-display text-[1.4rem] font-bold leading-tight text-brand-900">Site Office / Showroom Unit</h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Glass-fronted office, kiosk or sales suite. Can be fitted with a split AC, a reception counter and a
+            removable canopy for shade in hot climates.
+          </p>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>13.8 – 28 m²</dd></div>
+            <div><dt>Glazing</dt><dd>Tempered glass front, aluminium frame</dd></div>
+            <div><dt>Loading</dt><dd>2 – 4 units / 40HQ</dd></div>
+          </dl>
+          <div class="mt-auto pt-5">
+            <div class="flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+              <span class="price-tag text-[1.6rem]">$2,200<small>starting from, FOB</small></span>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <a class="btn btn-outline btn-sm" href="contact.html">Request price</a>
+              <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" data-wa-text="Hi, please quote a site office / showroom container unit." href="#">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- 筛选后无结果时的提示 -->
+    <p class="mt-10 rounded-lg border border-dashed border-brand-200 bg-brand-50 p-6 text-center text-slate-600" data-filter-empty="products" hidden>
+      Nothing in this category — <a class="link-arrow" href="contact.html">tell us what you need</a> and we will quote it.
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================================
+     四款主打型号横向对比
+====================================================================== -->
+<section class="border-y border-[#e5e9f0] bg-brand-50 py-12 lg:py-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow">Side by side</p>
+      <h2 class="section-title mt-3 text-[1.8rem] lg:text-[2.3rem]">Full comparison of the four expandable models</h2>
+      <p class="mt-4 text-slate-600">Same steel system throughout. The difference is footprint, layout and how many fit in a container.</p>
+    </div>
+
+    <div class="table-scroll card mt-8 overflow-hidden reveal">
+      <table class="spec-table wide">
+        <caption>Standard configuration. All dimensions nominal ±2%. Custom sizes available on request.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Specification</th>
+            <th scope="col">20FT Expandable</th>
+            <th scope="col">30FT Expandable</th>
+            <th scope="col">40FT Expandable</th>
+            <th scope="col">Apple Cabin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Model code</th><td>20E-2R1B</td><td>30E-3R1B</td><td>40E-3R2B</td><td>5.8C-1R1B</td></tr>
+          <tr><th scope="row">Folded (L×W×H)</th><td>5900×2260×2480</td><td>9000×2260×2480</td><td>11800×2260×2480</td><td>5800×2200×2500</td></tr>
+          <tr><th scope="row">Expanded footprint</th><td>5900×6300 mm</td><td>9000×6300 mm</td><td>11800×6300 mm</td><td>5800×2200 mm</td></tr>
+          <tr><th scope="row">Internal area</th><td>37.2 m² / 400 ft²</td><td>56.7 m² / 610 ft²</td><td>74.3 m² / 800 ft²</td><td>12.8 m² / 138 ft²</td></tr>
+          <tr><th scope="row">Layout (standard)</th><td>2 bed, 1 bath, kitchen, living</td><td>3 bed, 1 bath, kitchen, living</td><td>3 bed, 2 bath, kitchen, living, store</td><td>Studio + bath</td></tr>
+          <tr><th scope="row">Steel frame</th><td colspan="3">Q235B / Q355B galvanised, 2.5–4.0 mm, bolted (no welding on site)</td><td>Galvanised lightweight frame</td></tr>
+          <tr><th scope="row">Wall panel</th><td colspan="4">50 / 75 / 100 mm EPS · rock wool · PU sandwich panel, 0.5 mm colour steel</td></tr>
+          <tr><th scope="row">Floor</th><td colspan="3">18 mm cement board + PVC / laminate / SPC finish</td><td>18 mm board + SPC</td></tr>
+          <tr><th scope="row">Ceiling height</th><td colspan="4">2480 mm internal (2600 mm optional)</td></tr>
+          <tr><th scope="row">Wind / snow load</th><td colspan="4">0.9 kN/m² live load · designed per destination code (AU/NZS, IBC, EN)</td></tr>
+          <tr><th scope="row">Electrical</th><td colspan="4">CE / UL components · 110 V or 220 V · pre-wired plugs, no on-site rewiring</td></tr>
+          <tr><th scope="row">Loading</th><td>2 units / 40HQ</td><td>1–2 units / 40HQ</td><td>1 unit / 40HQ</td><td>4 units / 40HQ</td></tr>
+          <tr><th scope="row">Production lead time</th><td>25 days</td><td>25–30 days</td><td>30 days</td><td>35 days</td></tr>
+          <tr><th scope="row">Starting price (FOB)</th><td class="price-tag text-[1.05rem]">$4,500</td><td class="price-tag text-[1.05rem]">$6,800</td><td class="price-tag text-[1.05rem]">$8,900</td><td class="price-tag text-[1.05rem]">$12,500</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     选型助手：按用途推荐
+====================================================================== -->
+<section class="bg-white py-12 lg:py-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow">Not sure which one</p>
+      <h2 class="section-title mt-3 text-[1.8rem] lg:text-[2.3rem]">Tell us the use case, we will tell you the model</h2>
+    </div>
+    <div class="mt-8 grid gap-6 lg:grid-cols-2">
+      <div class="table-scroll card overflow-hidden reveal">
+        <table class="spec-table">
+          <thead><tr><th scope="col">If you need…</th><th scope="col">We usually recommend</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Backyard granny flat / ADU</th><td>30FT Expandable — 56.7 m² passes most secondary-dwelling size limits</td></tr>
+            <tr><th scope="row">Cheapest cost per m² landed</th><td>20FT Expandable — two units share one container</td></tr>
+            <tr><th scope="row">Family home, 3–4 people</th><td>40FT Expandable — 3 bed, 2 bath, no compromise on the living room</td></tr>
+            <tr><th scope="row">Site camp / labour housing</th><td>40FT + 20FT stacked two floors, or Detachable modules for volume</td></tr>
+            <tr><th scope="row">Resort, glamping, rental pod</th><td>Apple Cabin — the glazing is what guests pay for</td></tr>
+            <tr><th scope="row">Site office, kiosk, sales suite</th><td>Site Office Unit or Flat Pack — cheapest, fastest to hand over</td></tr>
+            <tr><th scope="row">Medical / school / public use</th><td>30FT Expandable with PVC or antibacterial wall finish</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card reveal p-6 lg:p-8">
+        <h3 class="font-display text-2xl font-bold text-brand-900">Still comparing? Send us your constraints.</h3>
+        <p class="mt-3 leading-relaxed text-slate-600">
+          Give us four numbers — the land size, the number of people, the destination country and your budget ceiling —
+          and we will come back with one recommendation instead of a catalogue.
+        </p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-700">
+          <li class="flex gap-3"><span class="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent-500 text-white"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4"><path d="m5 13 4 4L19 7"/></svg></span>Budget comparison for two or three shortlisted models</li>
+          <li class="flex gap-3"><span class="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent-500 text-white"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4"><path d="m5 13 4 4L19 7"/></svg></span>Free 2D layout drawn to your land dimensions</li>
+          <li class="flex gap-3"><span class="mt-1 h-5 w-5 shrink-0 grid place-items-center rounded-full bg-accent-500 text-white"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4"><path d="m5 13 4 4L19 7"/></svg></span>Landed cost (CIF + local delivery) instead of a bare FOB number</li>
+        </ul>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a class="btn btn-accent" href="contact.html">Send my requirements</a>
+          <a class="btn btn-whatsapp" data-href="whatsapp" data-wa-text="Hi, I need help choosing between the 20FT / 30FT / 40FT models." href="#">Ask on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     结尾 CTA
+====================================================================== -->
+<section class="bg-blueprint py-14">
+  <div class="mx-auto max-w-8xl px-5 text-center lg:px-8">
+    <h2 class="section-title section-title-light mx-auto max-w-3xl text-[1.8rem] lg:text-[2.4rem]">
+      Every model above can be re-drawn to your specification
+    </h2>
+    <p class="mx-auto mt-4 max-w-2xl text-brand-100">
+      Different bedroom count, wider living area, extra bathroom, wheelchair access — production changes price by
+      a few percent, not by a factor of two.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a class="btn btn-accent btn-lg" href="contact.html">Request a quotation</a>
+      <a class="btn btn-ghost-light btn-lg" data-href="whatsapp" href="#">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="bg-brand-950 pt-14 text-brand-200">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="grid gap-10 pb-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-2.5">
+          <svg width="38" height="25" viewBox="0 0 64 40" aria-hidden="true">
+            <rect x="4" y="14" width="56" height="24" fill="none" stroke="#ffffff" stroke-width="3"/>
+            <path d="M0 14 L32 2 L64 14" fill="none" stroke="#ed8936" stroke-width="3" stroke-linejoin="round"/>
+            <line x1="24" y1="14" x2="24" y2="38" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="5 4"/>
+            <line x1="45" y1="14" x2="45" y2="38" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="5 4"/>
+          </svg>
+          <span class="leading-none">
+            <span class="block font-display text-[1.25rem] font-bold tracking-wide text-white" data-site="brand">杰诚 HOUSE</span>
+            <span class="mt-0.5 block text-[.56rem] font-semibold tracking-[.16em] text-brand-300">EXPANDABLE CONTAINER HOUSE</span>
+          </span>
+        </div>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-brand-300">
+          <span data-site="brandFull">杰诚 Modular House Co., Ltd.</span> — a factory-direct manufacturer of expandable
+          container houses, flat pack container houses and apple cabins, exporting to 60+ countries since 2010.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">CE</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">ISO 9001</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">SGS</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">EN 1090</span>
+        </div>
+      </div>
+      <nav class="lg:col-span-2" aria-label="Products">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">PRODUCTS</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="transition hover:text-white" href="product-20ft-expandable.html">20FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-30ft-expandable.html">30FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-40ft-expandable.html">40FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-apple-cabin.html">Apple Cabin</a></li>
+          <li><a class="transition hover:text-white" href="products.html">All products</a></li>
+        </ul>
+      </nav>
+      <nav class="lg:col-span-2" aria-label="Company">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">COMPANY</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="transition hover:text-white" href="about.html">About us</a></li>
+          <li><a class="transition hover:text-white" href="projects.html">Projects</a></li>
+          <li><a class="transition hover:text-white" href="blog.html">Blog</a></li>
+          <li><a class="transition hover:text-white" href="contact.html">Contact</a></li>
+          <li><a class="transition hover:text-white" href="about.html#factory">Factory tour</a></li>
+        </ul>
+      </nav>
+      <div class="lg:col-span-4">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">CONTACT</h3>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-site="address">No. 88 Industrial Road, Zhengding District, Shijiazhuang, Hebei, China</span>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <a class="transition hover:text-white" data-href="phone" href="tel:"><span data-site="phone">+86 138 0000 0000</span></a>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            <a class="transition hover:text-white" data-href="email" href="mailto:"><span data-site="email">sales@example-containerhouse.com</span></a>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span data-site="hours">Mon – Sat 08:30 – 18:00 (GMT+8)</span>
+          </li>
+        </ul>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" href="#">WhatsApp us</a>
+          <a class="btn btn-accent btn-sm" href="contact.html">Request Quote</a>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4 border-t border-brand-800 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span data-year>2026</span> <span data-site="brandFull">杰诚 Modular House Co., Ltd.</span> All rights reserved.</p>
+      <p class="text-brand-400">Prices on this site are indicative FOB China and exclude freight, duty and local installation. All dimensions are nominal ±2%.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site-config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

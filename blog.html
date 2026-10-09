@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ===========================================================================
+  blog.html —— 博客列表页
+  目前是「结构 + 占位内容」，方便你后面填 SEO 文章。
+  新增文章：复制一个 <article data-cat="..."> 卡片即可。
+  分类筛选按钮的 data-filter 要和 data-cat 里的词一致。
+=========================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buyer Guides &amp; Technical Articles on Expandable Container Houses | 杰诚 HOUSE Blog</title>
+  <meta name="description" content="Practical guides for container house buyers: shipping costs, installation, granny flat and ADU compliance, insulation choice, and how expandable compares with tiny homes.">
+  <link rel="canonical" href="https://www.example-containerhouse.com/blog.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+</head>
+
+<body class="bg-white font-sans antialiased">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="topbar hidden lg:block">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8 h-9 flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <a data-href="phone" href="tel:" class="flex items-center gap-1.5 transition hover:text-white">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span data-site="phone">+86 138 0000 0000</span>
+      </a>
+      <a data-href="email" href="mailto:" class="flex items-center gap-1.5 transition hover:text-white">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        <span data-site="email">sales@example-containerhouse.com</span>
+      </a>
+      <span class="hidden xl:flex items-center gap-1.5">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span data-site="hours">Mon – Sat 08:30 – 18:00 (GMT+8)</span>
+      </span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span>CE · ISO 9001 · SGS Audited Factory</span>
+      <span class="h-3.5 w-px bg-brand-600"></span>
+      <span>Shipping to 60+ countries</span>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="mx-auto max-w-8xl px-4 sm:px-5 lg:px-8">
+    <div class="flex h-16 items-center gap-2 sm:gap-4 lg:h-[4.25rem]">
+      <a href="index.html" class="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5" aria-label="杰诚 HOUSE — home">
+        <svg class="h-5 w-auto sm:h-[26px]" viewBox="0 0 64 40" aria-hidden="true">
+          <rect x="4" y="14" width="56" height="24" fill="none" stroke="#1a365d" stroke-width="3"/>
+          <path d="M0 14 L32 2 L64 14" fill="none" stroke="#ed8936" stroke-width="3" stroke-linejoin="round"/>
+          <line x1="24" y1="14" x2="24" y2="38" stroke="#1a365d" stroke-width="2.5" stroke-dasharray="5 4"/>
+          <line x1="45" y1="14" x2="45" y2="38" stroke="#1a365d" stroke-width="2.5" stroke-dasharray="5 4"/>
+        </svg>
+        <span class="leading-none">
+          <span class="block font-display text-[1.15rem] font-bold tracking-wide text-brand-900 sm:text-[1.3rem]">杰诚 HOUSE</span>
+          <span class="mt-0.5 hidden text-[.58rem] font-semibold tracking-[.16em] text-slate-500 sm:block">EXPANDABLE CONTAINER HOUSE</span>
+        </span>
+      </a>
+      <nav class="ml-6 hidden items-center gap-7 lg:flex" aria-label="Main">
+        <a class="nav-link" href="index.html">Home</a>
+        <div class="nav-drop-wrap">
+          <a class="nav-link" href="products.html">Products
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="nav-drop">
+            <p class="drop-head">Expandable Series</p>
+            <a href="product-20ft-expandable.html">20FT Expandable Container House</a>
+            <a href="product-30ft-expandable.html">30FT Expandable Container House</a>
+            <a href="product-40ft-expandable.html">40FT Expandable Container House</a>
+            <p class="drop-head">Other Series</p>
+            <a href="product-apple-cabin.html">Apple Cabin / Capsule House</a>
+            <a href="products.html">View all products →</a>
+          </div>
+        </div>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="blog.html" aria-current="page">Blog</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-2 sm:gap-3">
+        <a data-href="whatsapp" href="#" class="hidden items-center gap-2 text-sm font-semibold text-brand-800 transition hover:text-accent-600 xl:flex">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#25d366]"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.37 2.98 1.17 3.09.78 3.65.73.56-.05 1.81-.74 2.06-1.45.25-.71.25-1.32.17-1.45-.07-.13-.27-.2-.57-.35zM12.04 21.5a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.51 0 4.88.98 6.65 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.42 9.41z"/></svg>
+          WhatsApp
+        </a>
+        <a href="contact.html" class="btn btn-accent btn-sm px-3 sm:px-4 lg:px-5">Request Quote</a>
+        <button class="burger lg:hidden -mr-1 p-2" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-panel border-t border-[#e5e9f0] lg:hidden" id="mobilePanel">
+    <nav class="px-5 pb-6 pt-2" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="products.html">All Products</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-20ft-expandable.html">— 20FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-30ft-expandable.html">— 30FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-40ft-expandable.html">— 40FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-apple-cabin.html">— Apple Cabin</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="mt-5 grid grid-cols-2 gap-2">
+        <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" href="#">WhatsApp</a>
+        <a class="btn btn-accent btn-sm" href="contact.html">Request Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =====================================================================
+     页头
+====================================================================== -->
+<section class="bg-blueprint py-12 lg:py-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> <span class="mx-1.5">/</span> <span aria-current="page">Blog</span>
+    </nav>
+    <h1 class="section-title section-title-light mt-4 text-[2rem] lg:text-[2.9rem]">Buyer guides &amp; technical notes</h1>
+    <p class="mt-4 max-w-3xl leading-relaxed text-brand-100">
+      The questions that actually decide a container house purchase: freight, foundations, compliance, insulation and
+      what breaks in year three. Written by the people who build them, not by a content agency.
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================================
+     置顶文章
+====================================================================== -->
+<section class="bg-white pt-12 lg:pt-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <article class="card card-hover reveal grid overflow-hidden lg:grid-cols-2">
+      <div class="card-media aspect-[16/10] lg:aspect-auto lg:h-full">
+        <span class="card-badge bg-brand-700">Featured</span>
+        <img src="assets/img/blog-shipping.svg" alt="Container shipping cost breakdown for an expandable house" loading="lazy">
+      </div>
+      <div class="p-6 lg:p-9">
+        <div class="flex items-center gap-3 text-xs">
+          <span class="chip chip-accent">Buyer guide</span>
+          <time class="text-slate-500" datetime="2026-08-18">18 Aug 2026</time>
+          <span class="text-slate-400">·</span>
+          <span class="text-slate-500">9 min read</span>
+        </div>
+        <h2 class="section-title mt-4 text-[1.6rem] lg:text-[2rem]">
+          <a class="transition hover:text-accent-600" href="blog-post.html">
+            What does it actually cost to ship an expandable house?
+          </a>
+        </h2>
+        <p class="mt-4 leading-relaxed text-slate-600">
+          Almost every quotation you receive stops at FOB. That is the number that matters least. Here is a full
+          worked example — two 20ft units from our factory to a driveway in Sydney — with ocean freight, terminal
+          charges, customs, quarantine inspection, local delivery and the fees nobody mentions until the invoice arrives.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#e5e9f0] pt-5 text-sm">
+          <div><p class="text-slate-500">FOB, 2 units</p><p class="price-tag text-[1.2rem]">$9,000</p></div>
+          <div><p class="text-slate-500">Ocean freight</p><p class="price-tag text-[1.2rem]">$2,400</p></div>
+          <div><p class="text-slate-500">Landed, Sydney</p><p class="price-tag text-[1.2rem] text-accent-600">≈ $14,600</p></div>
+        </div>
+        <a class="link-arrow mt-6" href="blog-post.html">Read the full breakdown</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- =====================================================================
+     分类筛选 + 文章列表
+====================================================================== -->
+<section class="bg-white py-12 lg:py-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+
+    <div class="flex flex-wrap items-center gap-2" data-filter-group="posts" role="group" aria-label="Filter articles">
+      <button class="filter-tab is-active" data-filter="all" type="button">All articles</button>
+      <button class="filter-tab" data-filter="guide" type="button">Buyer guides</button>
+      <button class="filter-tab" data-filter="compliance" type="button">Compliance</button>
+      <button class="filter-tab" data-filter="install" type="button">Installation</button>
+      <button class="filter-tab" data-filter="technical" type="button">Technical</button>
+      <span class="ml-auto text-sm text-slate-500"><span data-filter-count="posts">6</span> articles</span>
+    </div>
+
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-filter-target="posts">
+
+      <article class="card card-hover reveal overflow-hidden" data-cat="install">
+        <a href="blog-post.html" class="block">
+          <div class="card-media aspect-[16/9]"><img src="assets/img/blog-install.svg" alt="Expandable house installation sequence" loading="lazy"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="chip">Installation</span>
+              <time class="text-slate-500" datetime="2026-08-05">05 Aug 2026</time>
+            </div>
+            <h2 class="mt-3 font-display text-xl font-bold leading-snug text-brand-900">30 minutes, two people, no crane: the real unpacking sequence</h2>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Ground prep, lifting points, the order the wings come out, bolt torque, and the four mistakes that
+              crack a panel — including the one almost everyone makes on day one.
+            </p>
+            <span class="link-arrow mt-3 text-sm">Read more</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden" data-cat="compliance">
+        <a href="blog-post.html" class="block">
+          <div class="card-media aspect-[16/9]"><img src="assets/img/blog-granny.svg" alt="Granny flat rules in Australia" loading="lazy"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="chip">Compliance</span>
+              <time class="text-slate-500" datetime="2026-07-22">22 Jul 2026</time>
+            </div>
+            <h2 class="mt-3 font-display text-xl font-bold leading-snug text-brand-900">Granny flats in Australia: what actually blocks an approval</h2>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Setbacks, height limits, floor-area caps and the certification documents we prepare before the container
+              leaves the factory. Plus the one state where the rules changed this year.
+            </p>
+            <span class="link-arrow mt-3 text-sm">Read more</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden" data-cat="compliance">
+        <a href="blog-post.html" class="block">
+          <div class="card-media aspect-[16/9]"><img src="assets/img/blog-adu.svg" alt="ADU permits in the United States" loading="lazy"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="chip">Compliance</span>
+              <time class="text-slate-500" datetime="2026-07-04">04 Jul 2026</time>
+            </div>
+            <h2 class="mt-3 font-display text-xl font-bold leading-snug text-brand-900">ADU permits for US homeowners: the documents a reviewer asks for</h2>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              IBC/IRC compliance, 110 V UL-listed components, egress windows and the R-value conversation. What to hand
+              your inspector so the permit does not sit in a queue.
+            </p>
+            <span class="link-arrow mt-3 text-sm">Read more</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden" data-cat="technical">
+        <a href="blog-post.html" class="block">
+          <div class="card-media aspect-[16/9]"><img src="assets/img/blog-maintain.svg" alt="Container house lifespan and maintenance" loading="lazy"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="chip">Technical</span>
+              <time class="text-slate-500" datetime="2026-06-19">19 Jun 2026</time>
+            </div>
+            <h2 class="mt-3 font-display text-xl font-bold leading-snug text-brand-900">Lifespan and maintenance: what fails first, and when</h2>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              The honest version. What lasts 25 years, what you replace at year 8, and the two things that shorten a
+              container house's life dramatically if you get them wrong.
+            </p>
+            <span class="link-arrow mt-3 text-sm">Read more</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden" data-cat="guide">
+        <a href="blog-post.html" class="block">
+          <div class="card-media aspect-[16/9]"><img src="assets/img/blog-compare.svg" alt="Container house compared with a tiny home" loading="lazy"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="chip chip-accent">Buyer guide</span>
+              <time class="text-slate-500" datetime="2026-06-02">02 Jun 2026</time>
+            </div>
+            <h2 class="mt-3 font-display text-xl font-bold leading-snug text-brand-900">Container house vs tiny home vs flat pack: a cost table</h2>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Cost per square metre, freight per unit, build time, resale and relocation. Compared honestly, including
+              where a container house loses.
+            </p>
+            <span class="link-arrow mt-3 text-sm">Read more</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden" data-cat="technical guide">
+        <a href="blog-post.html" class="block">
+          <div class="card-media aspect-[16/9]"><img src="assets/img/blog-shipping.svg" alt="Insulation choice for expandable container houses" loading="lazy"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="chip">Technical</span>
+              <time class="text-slate-500" datetime="2026-05-15">15 May 2026</time>
+            </div>
+            <h2 class="mt-3 font-display text-xl font-bold leading-snug text-brand-900">EPS, rock wool or PU? Picking insulation for your climate</h2>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              A real comparison of the three panel types by U-value, fire behaviour, weight and price — and the
+              temperature at which PU stops being a luxury and becomes necessary.
+            </p>
+            <span class="link-arrow mt-3 text-sm">Read more</span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+
+    <p class="mt-10 rounded-lg border border-dashed border-brand-200 bg-brand-50 p-6 text-center text-slate-600" data-filter-empty="posts" hidden>
+      No articles in this category yet.
+    </p>
+
+    <div class="mt-10 flex justify-center">
+      <button class="btn btn-outline" type="button" disabled>Load older articles (add more posts here)</button>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     邮件订阅 / 询盘 CTA
+====================================================================== -->
+<section class="border-t border-[#e5e9f0] bg-brand-50 py-14">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-6">
+        <p class="eyebrow">Get the price list instead</p>
+        <h2 class="section-title mt-3 text-[1.7rem] lg:text-[2.1rem]">Reading is slower than asking</h2>
+        <p class="mt-4 max-w-xl leading-relaxed text-slate-600">
+          If you already know roughly what you need, skip the guides. Send us the model, quantity and destination
+          port and you will have a written quotation with FOB and CIF options within 12 working hours.
+        </p>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="card p-6">
+          <h3 class="font-display text-xl font-bold text-brand-900">Request the price list</h3>
+          <p class="mt-1.5 text-sm text-slate-600">Two fields is enough to get started.</p>
+          <form class="js-form mt-4" novalidate>
+            <input type="hidden" name="source" value="Blog page — price list request">
+            <div class="grid gap-x-4 sm:grid-cols-2">
+              <div class="field">
+                <label for="b-email">Email <span class="req">*</span></label>
+                <input class="input" id="b-email" name="email" type="email" required placeholder="you@company.com">
+                <span class="field-error">Please enter a valid email.</span>
+              </div>
+              <div class="field">
+                <label for="b-country">Country <span class="req">*</span></label>
+                <input class="input" id="b-country" name="country" type="text" required placeholder="e.g. Australia">
+                <span class="field-error">Required for freight pricing.</span>
+              </div>
+            </div>
+            <input class="hp-field" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn-accent btn-block" type="submit">Send me the price list</button>
+          </form>
+          <div class="form-success mt-4">
+            <strong>Thanks — check your inbox within 12 working hours.</strong>
+            <p class="mt-1">In a hurry? WhatsApp gets a faster answer than email.</p>
+          </div>
+          <p class="form-note mt-3">
+            No newsletter. One reply from a sales engineer, then nothing unless you ask.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-brand-950 pt-14 text-brand-200">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="grid gap-10 pb-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-2.5">
+          <svg width="38" height="25" viewBox="0 0 64 40" aria-hidden="true">
+            <rect x="4" y="14" width="56" height="24" fill="none" stroke="#ffffff" stroke-width="3"/>
+            <path d="M0 14 L32 2 L64 14" fill="none" stroke="#ed8936" stroke-width="3" stroke-linejoin="round"/>
+            <line x1="24" y1="14" x2="24" y2="38" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="5 4"/>
+            <line x1="45" y1="14" x2="45" y2="38" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="5 4"/>
+          </svg>
+          <span class="leading-none">
+            <span class="block font-display text-[1.25rem] font-bold tracking-wide text-white" data-site="brand">杰诚 HOUSE</span>
+            <span class="mt-0.5 block text-[.56rem] font-semibold tracking-[.16em] text-brand-300">EXPANDABLE CONTAINER HOUSE</span>
+          </span>
+        </div>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-brand-300">
+          <span data-site="brandFull">杰诚 Modular House Co., Ltd.</span> — a factory-direct manufacturer of expandable
+          container houses, flat pack container houses and apple cabins, exporting to 60+ countries since 2010.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">CE</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">ISO 9001</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">SGS</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">EN 1090</span>
+        </div>
+      </div>
+      <nav class="lg:col-span-2" aria-label="Products">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">PRODUCTS</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="transition hover:text-white" href="product-20ft-expandable.html">20FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-30ft-expandable.html">30FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-40ft-expandable.html">40FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-apple-cabin.html">Apple Cabin</a></li>
+          <li><a class="transition hover:text-white" href="products.html">All products</a></li>
+        </ul>
+      </nav>
+      <nav class="lg:col-span-2" aria-label="Company">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">COMPANY</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="transition hover:text-white" href="about.html">About us</a></li>
+          <li><a class="transition hover:text-white" href="projects.html">Projects</a></li>
+          <li><a class="transition hover:text-white" href="blog.html">Blog</a></li>
+          <li><a class="transition hover:text-white" href="contact.html">Contact</a></li>
+          <li><a class="transition hover:text-white" href="about.html#factory">Factory tour</a></li>
+        </ul>
+      </nav>
+      <div class="lg:col-span-4">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">CONTACT</h3>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-site="address">No. 88 Industrial Road, Zhengding District, Shijiazhuang, Hebei, China</span>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <a class="transition hover:text-white" data-href="phone" href="tel:"><span data-site="phone">+86 138 0000 0000</span></a>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            <a class="transition hover:text-white" data-href="email" href="mailto:"><span data-site="email">sales@example-containerhouse.com</span></a>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span data-site="hours">Mon – Sat 08:30 – 18:00 (GMT+8)</span>
+          </li>
+        </ul>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" href="#">WhatsApp us</a>
+          <a class="btn btn-accent btn-sm" href="contact.html">Request Quote</a>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4 border-t border-brand-800 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span data-year>2026</span> <span data-site="brandFull">杰诚 Modular House Co., Ltd.</span> All rights reserved.</p>
+      <p class="text-brand-400">Prices on this site are indicative FOB China and exclude freight, duty and local installation. All dimensions are nominal ±2%.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site-config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================================
+ * tailwind.src.css —— Tailwind 入口文件
+ * 改完跑 `npm run build:css` 生成 ../tailwind.css（页面只引用编译后的文件）
+ * 页面里的自定义组件样式在 style.css 里，不要写在这。
+ * ========================================================================= */
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-padding-top: 6.5rem; /* 锚点跳转时避开固定导航栏 */
+  }
+  /* 中英文混排的基线微调 */
+  body {
+    text-rendering: optimizeLegibility;
+  }
+}

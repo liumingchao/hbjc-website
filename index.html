@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ===========================================================================
+  index.html —— 首页
+  ---------------------------------------------------------------------------
+  【改内容怎么找】
+    · 全站联系方式（电话/邮箱/WhatsApp/地址）→ assets/js/site-config.js，不要在 HTML 里改
+    · 颜色 / 字体 → tailwind.config.js（跑 npm run build:css）
+    · 按钮、卡片、表单等组件样式 → assets/css/style.css
+    · 交互（悬浮 WhatsApp、筛选、表单校验）→ assets/js/main.js
+  【换图片】把 assets/img/xxx.svg 换成自己的照片即可，页面已用 aspect-[..] 锁比例
+=========================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expandable Container House Manufacturer | Factory Direct from $4,500 | 杰诚 HOUSE</title>
+  <meta name="description" content="We manufacture 20ft / 30ft / 40ft expandable container houses and apple cabins. Fully assembled in factory, 30-minute installation, CE &amp; ISO certified, shipping to 60+ countries. Get a factory-direct quote in 12 hours.">
+  <meta name="keywords" content="expandable container house, prefab container home, 20ft expandable house, 40ft expandable container house, apple cabin, flat pack container house, granny flat, ADU">
+  <link rel="canonical" href="https://www.example-containerhouse.com/">
+
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Expandable Container House Manufacturer | Factory Direct from $4,500">
+  <meta property="og:description" content="20ft / 30ft / 40ft expandable container houses, 30-minute installation, CE &amp; ISO certified. Exported to 60+ countries.">
+  <meta property="og:image" content="assets/img/hero-blueprint.svg">
+  <meta property="og:url" content="https://www.example-containerhouse.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- 字体：Barlow Condensed 用于标题/数字，Inter 用于正文 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- 全站共用样式：tailwind.css 是编译产物，style.css 是自定义组件 -->
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+
+  <!-- 结构化数据：帮助 Google 展示公司信息 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "杰诚 Modular House Co., Ltd.",
+    "url": "https://www.example-containerhouse.com/",
+    "logo": "https://www.example-containerhouse.com/assets/img/logo.svg",
+    "description": "Manufacturer of expandable container houses, flat pack container houses and apple cabins.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Shijiazhuang", "addressRegion": "Hebei", "addressCountry": "CN" },
+    "contactPoint": [{ "@type": "ContactPoint", "contactType": "sales", "telephone": "+86-138-0000-0000", "availableLanguage": ["en", "zh"] }]
+  }
+  </script>
+</head>
+
+<body class="bg-white font-sans antialiased">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- =====================================================================
+     顶部信息条（桌面端显示）
+====================================================================== -->
+<div class="topbar hidden lg:block">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8 h-9 flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <a data-href="phone" href="tel:" class="flex items-center gap-1.5 transition hover:text-white">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span data-site="phone">+86 138 0000 0000</span>
+      </a>
+      <a data-href="email" href="mailto:" class="flex items-center gap-1.5 transition hover:text-white">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        <span data-site="email">sales@example-containerhouse.com</span>
+      </a>
+      <span class="hidden xl:flex items-center gap-1.5">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span data-site="hours">Mon – Sat 08:30 – 18:00 (GMT+8)</span>
+      </span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span>CE · ISO 9001 · SGS Audited Factory</span>
+      <span class="h-3.5 w-px bg-brand-600"></span>
+      <span>Shipping to 60+ countries</span>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     主导航（sticky：「Request Quote」按钮始终可见）
+====================================================================== -->
+<header class="site-header">
+  <div class="mx-auto max-w-8xl px-4 sm:px-5 lg:px-8">
+    <div class="flex h-16 items-center gap-2 sm:gap-4 lg:h-[4.25rem]">
+
+      <!-- 品牌 -->
+      <a href="index.html" class="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5" aria-label="杰诚 HOUSE — home">
+        <svg class="h-5 w-auto sm:h-[26px]" viewBox="0 0 64 40" aria-hidden="true">
+          <rect x="4" y="14" width="56" height="24" fill="none" stroke="#1a365d" stroke-width="3"/>
+          <path d="M0 14 L32 2 L64 14" fill="none" stroke="#ed8936" stroke-width="3" stroke-linejoin="round"/>
+          <line x1="24" y1="14" x2="24" y2="38" stroke="#1a365d" stroke-width="2.5" stroke-dasharray="5 4"/>
+          <line x1="45" y1="14" x2="45" y2="38" stroke="#1a365d" stroke-width="2.5" stroke-dasharray="5 4"/>
+        </svg>
+        <span class="leading-none">
+          <span class="block font-display text-[1.15rem] font-bold tracking-wide text-brand-900 sm:text-[1.3rem]">杰诚 HOUSE</span>
+          <span class="mt-0.5 hidden text-[.58rem] font-semibold tracking-[.16em] text-slate-500 sm:block">EXPANDABLE CONTAINER HOUSE</span>
+        </span>
+      </a>
+
+      <!-- 桌面导航 -->
+      <nav class="ml-6 hidden items-center gap-7 lg:flex" aria-label="Main">
+        <a class="nav-link" href="index.html" aria-current="page">Home</a>
+        <div class="nav-drop-wrap">
+          <a class="nav-link" href="products.html">
+            Products
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="nav-drop">
+            <p class="drop-head">Expandable Series</p>
+            <a href="product-20ft-expandable.html">20FT Expandable Container House</a>
+            <a href="product-30ft-expandable.html">30FT Expandable Container House</a>
+            <a href="product-40ft-expandable.html">40FT Expandable Container House</a>
+            <p class="drop-head">Other Series</p>
+            <a href="product-apple-cabin.html">Apple Cabin / Capsule House</a>
+            <a href="products.html">View all products →</a>
+          </div>
+        </div>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="blog.html">Blog</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <!-- 右侧：固定询价按钮 -->
+      <div class="ml-auto flex items-center gap-2 sm:gap-3">
+        <a data-href="whatsapp" href="#" class="hidden items-center gap-2 text-sm font-semibold text-brand-800 transition hover:text-accent-600 xl:flex">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#25d366]"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.37 2.98 1.17 3.09.78 3.65.73.56-.05 1.81-.74 2.06-1.45.25-.71.25-1.32.17-1.45-.07-.13-.27-.2-.57-.35zM12.04 21.5a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.51 0 4.88.98 6.65 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.42 9.41z"/></svg>
+          WhatsApp
+        </a>
+        <a href="contact.html" class="btn btn-accent btn-sm px-3 sm:px-4 lg:px-5">Request Quote</a>
+        <button class="burger lg:hidden -mr-1 p-2" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 移动端抽屉 -->
+  <div class="mobile-panel border-t border-[#e5e9f0] lg:hidden" id="mobilePanel">
+    <nav class="px-5 pb-6 pt-2" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="products.html">All Products</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-20ft-expandable.html">— 20FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-30ft-expandable.html">— 30FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-40ft-expandable.html">— 40FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-apple-cabin.html">— Apple Cabin</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="mt-5 grid grid-cols-2 gap-2">
+        <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" href="#">WhatsApp</a>
+        <a class="btn btn-accent btn-sm" href="contact.html">Request Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =====================================================================
+     01 · HERO —— 大图 + 核心卖点 + 快速询价
+====================================================================== -->
+<section class="relative isolate overflow-hidden bg-brand-900">
+  <img src="assets/img/hero-blueprint.svg" alt="Expandable container house engineering elevation drawing" class="absolute inset-0 h-full w-full object-cover opacity-60" fetchpriority="high">
+  <div class="absolute inset-0 bg-gradient-to-r from-brand-950/95 via-brand-900/80 to-brand-900/40"></div>
+
+  <div class="relative mx-auto max-w-8xl px-5 py-16 lg:px-8 lg:py-24">
+    <div class="grid items-center gap-12 lg:grid-cols-12">
+
+      <!-- 左：主张 -->
+      <div class="lg:col-span-7">
+        <p class="eyebrow eyebrow-light">Factory Direct · Since 2010</p>
+        <h1 class="section-title section-title-light mt-4 text-[2.15rem] sm:text-[2.9rem] lg:text-[3.6rem]">
+          Expandable Container Houses<br class="hidden sm:block">
+          That Ship Flat and <span class="text-accent-500">Live Big</span>
+        </h1>
+        <p class="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-brand-100">
+          95% finished in our 52,000 m² factory. One 40HQ container carries two units.
+          Two people unfold one in about 30 minutes — no crane, no welding, no wet trades on site.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="contact.html" class="btn btn-accent btn-lg">
+            Get Factory Price List
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="products.html" class="btn btn-ghost-light btn-lg">Browse 4 Models</a>
+        </div>
+
+        <!-- 卖点快读 -->
+        <dl class="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/15 pt-7 sm:grid-cols-4">
+          <div><dt class="stat-num stat-num-light text-[1.9rem]">$<span data-count="4500">4,500</span></dt><dd class="stat-label text-brand-200">Starting price, FOB China</dd></div>
+          <div><dt class="stat-num stat-num-light text-[1.9rem]"><span data-count="30">30</span> min</dt><dd class="stat-label text-brand-200">Setup by 2 people</dd></div>
+          <div><dt class="stat-num stat-num-light text-[1.9rem]"><span data-count="25">25</span> yr</dt><dd class="stat-label text-brand-200">Structural lifespan</dd></div>
+          <div><dt class="stat-num stat-num-light text-[1.9rem]"><span data-count="60">60</span>+</dt><dd class="stat-label text-brand-200">Countries delivered</dd></div>
+        </dl>
+      </div>
+
+      <!-- 右：快速询价卡（首页转化位） -->
+      <div class="lg:col-span-5">
+        <div class="rounded-xl border border-white/15 bg-white/95 p-6 shadow-2xl backdrop-blur lg:p-7">
+          <h2 class="font-display text-2xl font-bold text-brand-900">Get your quote in 12 hours</h2>
+          <p class="mt-1.5 text-sm text-slate-600">Tell us the model and destination port — we reply with CIF price, drawings and lead time.</p>
+
+          <!-- 表单：提交逻辑见 main.js 的 initForms()；接接口改 site-config.js 的 formEndpoint -->
+          <form class="js-form mt-5" novalidate>
+            <input type="hidden" name="source" value="Home — hero quick quote">
+            <div class="field">
+              <label for="h-name">Name <span class="req">*</span></label>
+              <input class="input" id="h-name" name="name" type="text" required placeholder="Your name" autocomplete="name">
+              <span class="field-error">Please enter your name.</span>
+            </div>
+            <div class="grid gap-x-4 sm:grid-cols-2">
+              <div class="field">
+                <label for="h-email">Email <span class="req">*</span></label>
+                <input class="input" id="h-email" name="email" type="email" required placeholder="you@company.com" autocomplete="email">
+                <span class="field-error">Please enter a valid email.</span>
+              </div>
+              <div class="field">
+                <label for="h-country">Destination country</label>
+                <input class="input" id="h-country" name="country" type="text" placeholder="e.g. Australia" autocomplete="country-name">
+              </div>
+            </div>
+            <div class="field">
+              <label for="h-model">Interested model</label>
+              <select class="select" id="h-model" name="model">
+                <option value="">— Select —</option>
+                <option>20FT Expandable Container House (37.2 m²)</option>
+                <option>30FT Expandable Container House (56.7 m²)</option>
+                <option>40FT Expandable Container House (74.3 m²)</option>
+                <option>Apple Cabin / Capsule House (12.8 m²)</option>
+                <option>Not sure yet — need advice</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="h-msg">Requirement</label>
+              <textarea class="textarea" id="h-msg" name="message" rows="3" placeholder="Quantity, layout, port of discharge, special requirements…"></textarea>
+            </div>
+            <!-- 蜜罐：防机器人，用户看不到 -->
+            <input class="hp-field" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn-brand btn-block" type="submit">
+              Send Inquiry
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form-note mt-3">Your information stays with our sales team only. No newsletter, no spam.</p>
+          </form>
+
+          <div class="form-success mt-4">
+            <strong>Thanks — your inquiry has been received.</strong>
+            <p class="mt-1">Our sales engineer will reply within 12 working hours. For an instant answer, message us on WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     02 · 认证跑马灯
+====================================================================== -->
+<section class="border-b border-[#e5e9f0] bg-white py-5">
+  <div class="marquee">
+    <div class="marquee-track items-center">
+      <!-- 复制一份用于无缝循环（marquee-track 动画位移 50%） -->
+      <div class="flex shrink-0 items-center gap-[2.5rem] pr-[2.5rem]">
+        <span class="badge-cert">CE Certified</span>
+        <span class="badge-cert">ISO 9001:2015</span>
+        <span class="badge-cert">SGS Audited</span>
+        <span class="badge-cert">BV Factory Inspection</span>
+        <span class="badge-cert">EN 1090 Steel Structure</span>
+        <span class="badge-cert">AS/NZS Compliant Options</span>
+        <span class="badge-cert">UL Listed Electrical</span>
+        <span class="badge-cert">TÜV Tested</span>
+      </div>
+      <div class="flex shrink-0 items-center gap-[2.5rem] pr-[2.5rem]" aria-hidden="true">
+        <span class="badge-cert">CE Certified</span>
+        <span class="badge-cert">ISO 9001:2015</span>
+        <span class="badge-cert">SGS Audited</span>
+        <span class="badge-cert">BV Factory Inspection</span>
+        <span class="badge-cert">EN 1090 Steel Structure</span>
+        <span class="badge-cert">AS/NZS Compliant Options</span>
+        <span class="badge-cert">UL Listed Electrical</span>
+        <span class="badge-cert">TÜV Tested</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     03 · 核心卖点（6 项）
+====================================================================== -->
+<section class="bg-white py-16 lg:py-20">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow">Why expandable, not traditional</p>
+      <h2 class="section-title mt-3 text-[1.9rem] lg:text-[2.5rem]">Six reasons buyers stop building on site</h2>
+      <p class="mt-4 text-[1.02rem] leading-relaxed text-slate-600">
+        An expandable house is a finished house folded into a steel frame. Everything that normally eats your
+        schedule and budget — tiling, plumbing, wiring, painting — happens in a factory on a jig, not in the rain on your land.
+      </p>
+    </div>
+
+    <div class="mt-11 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- 卡片 1 -->
+      <article class="card card-hover reveal p-6">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-brand-50 text-brand-700">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+        </span>
+        <h3 class="mt-4 font-display text-xl font-bold text-brand-900">30-minute setup, 2 people</h3>
+        <p class="mt-2 text-[.94rem] leading-relaxed text-slate-600">
+          Ship it folded, bolt the four corners, unfold the wings, connect the pre-wired plugs.
+          A forklift or a small crane is enough — no concrete foundation required, levelled blocks or a steel skid will do.
+        </p>
+      </article>
+      <!-- 卡片 2 -->
+      <article class="card card-hover reveal p-6">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-accent-100 text-accent-700">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4M12 11v5M8 11h8"/></svg>
+        </span>
+        <h3 class="mt-4 font-display text-xl font-bold text-brand-900">1/5 the shipping volume</h3>
+        <p class="mt-2 text-[.94rem] leading-relaxed text-slate-600">
+          Folded, a 20ft unit is only 2.26 m wide, so two units fit one 40HQ. That is the single biggest line item
+          in your landed cost — and it is where expandable beats a fixed container home by 40–60%.
+        </p>
+      </article>
+      <!-- 卡片 3 -->
+      <article class="card card-hover reveal p-6">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-brand-50 text-brand-700">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <h3 class="mt-4 font-display text-xl font-bold text-brand-900">Galvanised steel, 25-year shell</h3>
+        <p class="mt-2 text-[.94rem] leading-relaxed text-slate-600">
+          Q235B/Q355B galvanised frame, 0.5 mm colour-steel cladding over 75 mm EPS / rock-wool /
+          PU sandwich panel. Load tested to 1.5 kN/m² floor and 1.0 kN/m² roof — the usual 50-year design wind and snow codes.
+        </p>
+      </article>
+      <!-- 卡片 4 -->
+      <article class="card card-hover reveal p-6">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-accent-100 text-accent-700">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+        </span>
+        <h3 class="mt-4 font-display text-xl font-bold text-brand-900">Built to your code, not ours</h3>
+        <p class="mt-2 text-[.94rem] leading-relaxed text-slate-600">
+          We build to your spec: AU/NZS, US (IBC/IRC), EU (EN 1090), or Middle-East wind loads.
+          110 V / 220 V wiring, R-value insulation and door sizes are set before production starts.
+        </p>
+      </article>
+      <!-- 卡片 5 -->
+      <article class="card card-hover reveal p-6">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-brand-50 text-brand-700">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v6H3zM3 15h18v6H3z"/><path d="M7 9v6M17 9v6"/></svg>
+        </span>
+        <h3 class="mt-4 font-display text-xl font-bold text-brand-900">Move it, resell it, restack it</h3>
+        <p class="mt-2 text-[.94rem] leading-relaxed text-slate-600">
+          It stays a container. Relocate a site camp, split a building into rental units, stack two floors
+          for a mining or oilfield camp — with no demolition cost and no loss of the shell.
+        </p>
+      </article>
+      <!-- 卡片 6 -->
+      <article class="card card-hover reveal p-6">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-accent-100 text-accent-700">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        </span>
+        <h3 class="mt-4 font-display text-xl font-bold text-brand-900">25–35 day production</h3>
+        <p class="mt-2 text-[.94rem] leading-relaxed text-slate-600">
+          Standard models ship in 25 days, custom layout in 30–35. We keep 400–500 units moving out every month,
+          so your order is not waiting behind someone else's.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     04 · 价格区间（需求 4：首页明确展示 Starting from $4,500）
+====================================================================== -->
+<section class="bg-grid-light border-y border-[#e5e9f0] bg-brand-50 py-16 lg:py-20" id="pricing">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between reveal">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Transparent pricing</p>
+        <h2 class="section-title mt-3 text-[1.9rem] lg:text-[2.5rem]">
+          Starting from <span class="text-accent-600">$4,500</span> per unit
+        </h2>
+        <p class="mt-4 text-[1.02rem] leading-relaxed text-slate-600">
+          Factory-direct FOB China price for a standard configuration, MOQ 1 unit.
+          Final price depends on size, insulation, sanitary and electrical spec, and quantity.
+        </p>
+      </div>
+      <a href="contact.html" class="btn btn-brand shrink-0">Get an exact quote</a>
+    </div>
+
+    <!-- 型号价格表 -->
+    <div class="table-scroll card mt-10 overflow-hidden reveal">
+      <table class="spec-table wide">
+        <caption>Prices are FOB China port, standard configuration, valid for 30 days. Ocean freight, import duty and local delivery are quoted separately to your port.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Internal area</th>
+            <th scope="col">Layout</th>
+            <th scope="col">Loading</th>
+            <th scope="col">Starting price</th>
+            <th scope="col">Lead time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><a class="link-arrow" href="product-20ft-expandable.html">20FT Expandable</a></th>
+            <td>37.2 m² <span class="text-slate-500">(400 ft²)</span></td>
+            <td>2 bedrooms, 1 bath, kitchen, living</td>
+            <td>2 units / 40HQ</td>
+            <td class="price-tag text-[1.15rem]">from $4,500</td>
+            <td>25 days</td>
+          </tr>
+          <tr>
+            <th scope="row"><a class="link-arrow" href="product-30ft-expandable.html">30FT Expandable</a></th>
+            <td>56.7 m² <span class="text-slate-500">(610 ft²)</span></td>
+            <td>3 bedrooms, 1 bath, kitchen, living</td>
+            <td>1–2 units / 40HQ</td>
+            <td class="price-tag text-[1.15rem]">from $6,800</td>
+            <td>25–30 days</td>
+          </tr>
+          <tr>
+            <th scope="row"><a class="link-arrow" href="product-40ft-expandable.html">40FT Expandable</a></th>
+            <td>74.3 m² <span class="text-slate-500">(800 ft²)</span></td>
+            <td>3 bedrooms, 2 bath, kitchen, living, store</td>
+            <td>1 unit / 40HQ</td>
+            <td class="price-tag text-[1.15rem]">from $8,900</td>
+            <td>30 days</td>
+          </tr>
+          <tr>
+            <th scope="row"><a class="link-arrow" href="product-apple-cabin.html">Apple Cabin</a></th>
+            <td>12.8 m² <span class="text-slate-500">(138 ft²)</span></td>
+            <td>Studio + bath, panoramic glass</td>
+            <td>4 units / 40HQ</td>
+            <td class="price-tag text-[1.15rem]">from $12,500</td>
+            <td>35 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 影响价格的 4 个变量 -->
+    <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="reveal rounded-lg border border-brand-100 bg-white p-5">
+        <p class="font-display text-lg font-bold text-brand-900">Insulation</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">EPS (standard) → rock wool (+8%) → PU panel (+15–20%). For cold climates and mine camps, PU pays for itself.</p>
+      </div>
+      <div class="reveal rounded-lg border border-brand-100 bg-white p-5">
+        <p class="font-display text-lg font-bold text-brand-900">Bathroom &amp; kitchen</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">A full wet bathroom, water heater and L-shaped kitchen add roughly $900–1,800 depending on brand.</p>
+      </div>
+      <div class="reveal rounded-lg border border-brand-100 bg-white p-5">
+        <p class="font-display text-lg font-bold text-brand-900">Quantity</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">10+ units: 3–5% off. 50+ units: project pricing + free layout drawing and one free spare panel set.</p>
+      </div>
+      <div class="reveal rounded-lg border border-brand-100 bg-white p-5">
+        <p class="font-display text-lg font-bold text-brand-900">Trade term</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">FOB / CIF / DDP quoted side by side so you can compare landed cost instead of guessing at freight.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     05 · 产品精选（4 个型号）
+====================================================================== -->
+<section class="bg-white py-16 lg:py-20" id="products">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between reveal">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Product range</p>
+        <h2 class="section-title mt-3 text-[1.9rem] lg:text-[2.5rem]">Four models cover almost every enquiry</h2>
+        <p class="mt-4 text-[1.02rem] text-slate-600">Every model can be re-laid out. If none of these fit, send us a sketch and we will quote it.</p>
+      </div>
+      <a href="products.html" class="btn btn-outline shrink-0">Compare all models</a>
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- 产品卡模板：复制这一段就能加新产品 -->
+      <article class="card card-hover reveal overflow-hidden">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Best seller</span>
+          <img src="assets/img/product-20ft.svg" alt="20ft expandable container house — front elevation with dimensions" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model 20E-2R1B</p>
+          <h3 class="mt-1.5 font-display text-[1.35rem] font-bold leading-tight text-brand-900">
+            <a href="product-20ft-expandable.html" class="transition hover:text-accent-600">20FT Expandable Container House</a>
+          </h3>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>37.2 m²</dd></div>
+            <div><dt>Layout</dt><dd>2 Bed · 1 Bath</dd></div>
+            <div><dt>Loading</dt><dd>2 units / 40HQ</dd></div>
+          </dl>
+          <div class="mt-4 flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+            <span class="price-tag text-[1.5rem]">$4,500<small>starting from</small></span>
+            <a href="product-20ft-expandable.html" class="link-arrow text-sm">Details</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden">
+        <div class="card-media aspect-[4/3]">
+          <img src="assets/img/product-30ft.svg" alt="30ft expandable container house — front elevation with dimensions" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model 30E-3R1B</p>
+          <h3 class="mt-1.5 font-display text-[1.35rem] font-bold leading-tight text-brand-900">
+            <a href="product-30ft-expandable.html" class="transition hover:text-accent-600">30FT Expandable Container House</a>
+          </h3>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>56.7 m²</dd></div>
+            <div><dt>Layout</dt><dd>3 Bed · 1 Bath</dd></div>
+            <div><dt>Loading</dt><dd>1–2 units / 40HQ</dd></div>
+          </dl>
+          <div class="mt-4 flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+            <span class="price-tag text-[1.5rem]">$6,800<small>starting from</small></span>
+            <a href="product-30ft-expandable.html" class="link-arrow text-sm">Details</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Granny flat</span>
+          <img src="assets/img/product-40ft.svg" alt="40ft expandable container house — front elevation with dimensions" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model 40E-3R2B</p>
+          <h3 class="mt-1.5 font-display text-[1.35rem] font-bold leading-tight text-brand-900">
+            <a href="product-40ft-expandable.html" class="transition hover:text-accent-600">40FT Expandable Container House</a>
+          </h3>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>74.3 m²</dd></div>
+            <div><dt>Layout</dt><dd>3 Bed · 2 Bath</dd></div>
+            <div><dt>Loading</dt><dd>1 unit / 40HQ</dd></div>
+          </dl>
+          <div class="mt-4 flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+            <span class="price-tag text-[1.5rem]">$8,900<small>starting from</small></span>
+            <a href="product-40ft-expandable.html" class="link-arrow text-sm">Details</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge bg-brand-700">Hospitality</span>
+          <img src="assets/img/product-cabin.svg" alt="Apple cabin capsule house — front elevation with panoramic glazing" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Model 5.8C-1R1B</p>
+          <h3 class="mt-1.5 font-display text-[1.35rem] font-bold leading-tight text-brand-900">
+            <a href="product-apple-cabin.html" class="transition hover:text-accent-600">Apple Cabin / Capsule House</a>
+          </h3>
+          <dl class="spec-list mt-4">
+            <div><dt>Internal area</dt><dd>12.8 m²</dd></div>
+            <div><dt>Layout</dt><dd>Studio · 1 Bath</dd></div>
+            <div><dt>Loading</dt><dd>4 units / 40HQ</dd></div>
+          </dl>
+          <div class="mt-4 flex items-baseline justify-between border-t border-[#e5e9f0] pt-4">
+            <span class="price-tag text-[1.5rem]">$12,500<small>starting from</small></span>
+            <a href="product-apple-cabin.html" class="link-arrow text-sm">Details</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     06 · 工厂实力（产能数据）
+====================================================================== -->
+<section class="bg-blueprint py-16 text-white lg:py-20">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div class="reveal">
+        <p class="eyebrow eyebrow-light">Factory, not a trading office</p>
+        <h2 class="section-title section-title-light mt-3 text-[1.9rem] lg:text-[2.5rem]">
+          52,000 m² of production you can visit before you pay
+        </h2>
+        <p class="mt-4 leading-relaxed text-brand-100">
+          We are the factory. Three automatic sandwich-panel lines, a steel-frame jig bay, and an in-house
+          painting and assembly shop. Come and inspect, or send a third-party inspector — we publish the address
+          and welcome both.
+        </p>
+
+        <!-- 产能数字：data-count 触发滚动动画（见 main.js initCounters） -->
+        <dl class="mt-9 grid grid-cols-2 gap-x-8 gap-y-7 sm:grid-cols-3">
+          <div><dt class="stat-num stat-num-light"><span data-count="16">16</span>+</dt><dd class="stat-label text-brand-200">Years manufacturing</dd></div>
+          <div><dt class="stat-num stat-num-light"><span data-count="52000">52,000</span></dt><dd class="stat-label text-brand-200">m² workshop</dd></div>
+          <div><dt class="stat-num stat-num-light"><span data-count="5000">5,000</span>+</dt><dd class="stat-label text-brand-200">Units / year capacity</dd></div>
+          <div><dt class="stat-num stat-num-light"><span data-count="400">400</span>–500</dt><dd class="stat-label text-brand-200">Units shipped / month</dd></div>
+          <div><dt class="stat-num stat-num-light"><span data-count="200">200</span>+</dt><dd class="stat-label text-brand-200">Workers &amp; engineers</dd></div>
+          <div><dt class="stat-num stat-num-light"><span data-count="60">60</span>+</dt><dd class="stat-label text-brand-200">Export destinations</dd></div>
+        </dl>
+
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="about.html" class="btn btn-ghost-light">Take the factory tour</a>
+          <a data-href="whatsapp" data-wa-text="Hi, I would like to arrange a factory video call / inspection." href="#" class="btn btn-accent">
+            Book a factory video call
+          </a>
+        </div>
+      </div>
+
+      <!-- 工厂照片网格 -->
+      <div class="grid grid-cols-2 gap-3 reveal">
+        <img class="col-span-2 aspect-[16/9] w-full rounded-lg object-cover" src="assets/img/factory-workshop.svg" alt="Container house manufacturing workshop" loading="lazy">
+        <img class="aspect-[4/3] w-full rounded-lg object-cover" src="assets/img/factory-line.svg" alt="Automatic panel production line" loading="lazy">
+        <img class="aspect-[4/3] w-full rounded-lg object-cover" src="assets/img/factory-yard.svg" alt="Container house yard and loading area" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     07 · 客户案例预览（需求 5 的首页入口）
+====================================================================== -->
+<section class="bg-white py-16 lg:py-20">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between reveal">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Customer projects</p>
+        <h2 class="section-title mt-3 text-[1.9rem] lg:text-[2.5rem]">Where our houses actually ended up</h2>
+        <p class="mt-4 text-[1.02rem] text-slate-600">
+          Mining camps, backyard granny flats, resort units, site offices. Real orders, real ports, real install dates.
+        </p>
+      </div>
+      <a href="projects.html" class="btn btn-outline shrink-0">All 9 projects</a>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <a href="projects.html" class="card card-hover reveal group overflow-hidden">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Australia</span>
+          <img src="assets/img/project-au.svg" alt="30ft expandable container house installed as a granny flat in Sydney" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">30FT Expandable · 2 units</p>
+          <h3 class="mt-1.5 font-display text-lg font-bold text-brand-900 group-hover:text-accent-600">Granny flat for a Sydney family</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Ordered in March, installed in the backyard in one morning. Council approved as a secondary dwelling.
+          </p>
+        </div>
+      </a>
+      <a href="projects.html" class="card card-hover reveal group overflow-hidden">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Saudi Arabia</span>
+          <img src="assets/img/project-sa.svg" alt="40ft expandable container houses used as a site camp in Riyadh" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">40FT Expandable · 24 units</p>
+          <h3 class="mt-1.5 font-display text-lg font-bold text-brand-900 group-hover:text-accent-600">24-unit labour camp, Riyadh</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Two-storey stacking with external stair towers. Delivered in three shipments, 11 weeks from PO.
+          </p>
+        </div>
+      </a>
+      <a href="projects.html" class="card card-hover reveal group overflow-hidden">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">New Zealand</span>
+          <img src="assets/img/project-nz.svg" alt="Apple cabin capsule houses used as resort units in Queenstown" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Apple Cabin · 6 units</p>
+          <h3 class="mt-1.5 font-display text-lg font-bold text-brand-900 group-hover:text-accent-600">Six resort pods in Queenstown</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Panoramic glazing, heat pump and outdoor decking. RevPAR paid the units back inside two seasons.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     08 · 合作流程（5 步）
+====================================================================== -->
+<section class="border-y border-[#e5e9f0] bg-brand-50 py-16 lg:py-20">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow">How an order runs</p>
+      <h2 class="section-title mt-3 text-[1.9rem] lg:text-[2.5rem]">From first message to keys in hand</h2>
+    </div>
+
+    <ol class="mt-11 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+      <li class="reveal rounded-lg border border-brand-100 bg-white p-5">
+        <span class="model-code text-[.8rem] font-bold text-accent-600">STEP 01</span>
+        <h3 class="mt-2 font-display text-lg font-bold text-brand-900">Inquiry &amp; config</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Send model, quantity and destination port. We reply with FOB and CIF options and a drawing, usually within 12 hours.</p>
+      </li>
+      <li class="reveal rounded-lg border border-brand-100 bg-white p-5">
+        <span class="model-code text-[.8rem] font-bold text-accent-600">STEP 02</span>
+        <h3 class="mt-2 font-display text-lg font-bold text-brand-900">Drawing approval</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">We issue a 2D layout and 3D preview for your sign-off. Nothing is cut until you approve it in writing.</p>
+      </li>
+      <li class="reveal rounded-lg border border-brand-100 bg-white p-5">
+        <span class="model-code text-[.8rem] font-bold text-accent-600">STEP 03</span>
+        <h3 class="mt-2 font-display text-lg font-bold text-brand-900">30% deposit, production</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Production starts on deposit. Weekly photo updates in a shared folder — you always know which stage your units are at.</p>
+      </li>
+      <li class="reveal rounded-lg border border-brand-100 bg-white p-5">
+        <span class="model-code text-[.8rem] font-bold text-accent-600">STEP 04</span>
+        <h3 class="mt-2 font-display text-lg font-bold text-brand-900">Inspection &amp; loading</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Third-party inspection welcome (SGS/BV). We load, photograph every unit and send you the loading report and container numbers.</p>
+      </li>
+      <li class="reveal rounded-lg border border-brand-100 bg-white p-5">
+        <span class="model-code text-[.8rem] font-bold text-accent-600">STEP 05</span>
+        <h3 class="mt-2 font-display text-lg font-bold text-brand-900">On-site support</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Video guidance during unfolding, plus a written 12-page installation manual and spare-parts list in every container.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- =====================================================================
+     09 · 客户评价
+====================================================================== -->
+<section class="bg-white py-16 lg:py-20">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow">What buyers say</p>
+      <h2 class="section-title mt-3 text-[1.9rem] lg:text-[2.5rem]">Three voices from the last 12 months</h2>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <figure class="quote-card reveal">
+        <blockquote><p>“The drawings matched what arrived, down to the door swing. That is rarer than it should be. Second container already ordered for the granny flat next door.”</p></blockquote>
+        <figcaption class="mt-4 flex items-center gap-3">
+          <span class="avatar-initial">DM</span>
+          <span class="text-sm"><strong class="block text-brand-900">D. Mitchell</strong><span class="text-slate-500">Builder, Sydney, Australia</span></span>
+        </figcaption>
+      </figure>
+      <figure class="quote-card reveal">
+        <blockquote><p>“We stacked 24 units into two floors and moved the crew in within nine days of the trucks arriving. No welding on site, which is what we needed.”</p></blockquote>
+        <figcaption class="mt-4 flex items-center gap-3">
+          <span class="avatar-initial">AH</span>
+          <span class="text-sm"><strong class="block text-brand-900">A. Haddad</strong><span class="text-slate-500">Project Manager, Riyadh, Saudi Arabia</span></span>
+        </figcaption>
+      </figure>
+      <figure class="quote-card reveal">
+        <blockquote><p>“Guest reviews keep mentioning the rooms. Six pods were cheaper than building four cabins, and we can relocate them if the lease changes.”</p></blockquote>
+        <figcaption class="mt-4 flex items-center gap-3">
+          <span class="avatar-initial">SL</span>
+          <span class="text-sm"><strong class="block text-brand-900">S. Lawson</strong><span class="text-slate-500">Resort Owner, Queenstown, New Zealand</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     10 · 博客预览（需求 7：为 SEO 预留的内容区）
+====================================================================== -->
+<section class="border-t border-[#e5e9f0] bg-brand-50 py-16 lg:py-20">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between reveal">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Buyer guides</p>
+        <h2 class="section-title mt-3 text-[1.9rem] lg:text-[2.5rem]">Answers to the questions we get every week</h2>
+      </div>
+      <a href="blog.html" class="btn btn-outline shrink-0">All articles</a>
+    </div>
+
+    <!-- 博客卡片模板：新增文章复制一整个 <article> -->
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <article class="card card-hover reveal overflow-hidden">
+        <a href="blog-post.html" class="block">
+          <div class="card-media aspect-[16/9]">
+            <img src="assets/img/blog-shipping.svg" alt="Container shipping costs for expandable houses" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="chip chip-accent">Buyer guide</span>
+              <time class="text-slate-500" datetime="2026-08-18">18 Aug 2026</time>
+            </div>
+            <h3 class="mt-3 font-display text-xl font-bold leading-snug text-brand-900">What does it actually cost to ship an expandable house?</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              A worked example: 2 × 20ft units Sydney, FOB → CIF → landed, including terminal charges and the fees nobody quotes you up front.
+            </p>
+            <span class="link-arrow mt-3 text-sm">Read more</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden">
+        <a href="blog-post.html" class="block">
+          <div class="card-media aspect-[16/9]">
+            <img src="assets/img/blog-install.svg" alt="Step by step expandable house installation" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="chip">Installation</span>
+              <time class="text-slate-500" datetime="2026-08-05">05 Aug 2026</time>
+            </div>
+            <h3 class="mt-3 font-display text-xl font-bold leading-snug text-brand-900">30 minutes, two people, no crane: the real unpacking sequence</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Ground prep, lifting points, the order the wings come out, and the four mistakes that crack a panel.
+            </p>
+            <span class="link-arrow mt-3 text-sm">Read more</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="card card-hover reveal overflow-hidden">
+        <a href="blog-post.html" class="block">
+          <div class="card-media aspect-[16/9]">
+            <img src="assets/img/blog-granny.svg" alt="Granny flat rules in Australia" loading="lazy">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="chip">Compliance</span>
+              <time class="text-slate-500" datetime="2026-07-22">22 Jul 2026</time>
+            </div>
+            <h3 class="mt-3 font-display text-xl font-bold leading-snug text-brand-900">Granny flats in Australia: what actually blocks an approval</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Setbacks, height limits and the certification documents we prepare for you before the container leaves the factory.
+            </p>
+            <span class="link-arrow mt-3 text-sm">Read more</span>
+          </div>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     11 · 结尾 CTA + 询盘表单
+====================================================================== -->
+<section class="relative isolate overflow-hidden bg-brand-900 py-16 lg:py-20" id="quote">
+  <div class="absolute inset-0 bg-blueprint opacity-70"></div>
+  <div class="relative mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+      <div class="reveal">
+        <p class="eyebrow eyebrow-light">Get started</p>
+        <h2 class="section-title section-title-light mt-3 text-[1.9rem] lg:text-[2.6rem]">
+          Send us the model and the port.<br>We will do the rest of the thinking.
+        </h2>
+        <p class="mt-5 max-w-lg leading-relaxed text-brand-100">
+          Prices, drawings, loading plan and lead time — one reply, no back-and-forth. If your project needs
+          a different size or a multi-storey layout, say so and we will quote that instead.
+        </p>
+
+        <ul class="mt-8 space-y-4">
+          <li class="flex gap-3"><span class="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-500 text-white"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2"><path d="m5 13 4 4L19 7"/></svg></span><span class="text-brand-100"><strong class="text-white">Reply within 12 working hours</strong> — a real engineer, not an auto-responder.</span></li>
+          <li class="flex gap-3"><span class="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-500 text-white"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2"><path d="m5 13 4 4L19 7"/></svg></span><span class="text-brand-100"><strong class="text-white">Free 2D layout drawing</strong> with every quotation — yours to keep either way.</span></li>
+          <li class="flex gap-3"><span class="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-500 text-white"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2"><path d="m5 13 4 4L19 7"/></svg></span><span class="text-brand-100"><strong class="text-white">Prefer to talk?</strong> Call or WhatsApp us — <a data-href="whatsapp" href="#" class="font-semibold text-accent-400 underline">open WhatsApp</a>.</span></li>
+        </ul>
+      </div>
+
+      <!-- 询盘表单（组件与首页 hero 一致） -->
+      <div class="rounded-xl border border-white/15 bg-white p-6 shadow-2xl lg:p-7">
+        <h3 class="font-display text-2xl font-bold text-brand-900">Request a quotation</h3>
+        <p class="mt-1.5 text-sm text-slate-600">Fields marked <span class="req text-accent-600">*</span> are required.</p>
+        <form class="js-form mt-5" novalidate>
+          <input type="hidden" name="source" value="Home — bottom CTA">
+          <div class="grid gap-x-4 sm:grid-cols-2">
+            <div class="field">
+              <label for="c-name">Name <span class="req">*</span></label>
+              <input class="input" id="c-name" name="name" type="text" required placeholder="Your name">
+              <span class="field-error">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="c-company">Company</label>
+              <input class="input" id="c-company" name="company" type="text" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="c-email">Email <span class="req">*</span></label>
+              <input class="input" id="c-email" name="email" type="email" required placeholder="you@company.com">
+              <span class="field-error">Please enter a valid email.</span>
+            </div>
+            <div class="field">
+              <label for="c-phone">Phone / WhatsApp</label>
+              <input class="input" id="c-phone" name="phone" type="tel" placeholder="+1 555 000 0000">
+            </div>
+            <div class="field">
+              <label for="c-country">Destination country <span class="req">*</span></label>
+              <input class="input" id="c-country" name="country" type="text" required placeholder="e.g. Australia">
+              <span class="field-error">We need this to quote freight.</span>
+            </div>
+            <div class="field">
+              <label for="c-qty">Quantity</label>
+              <select class="select" id="c-qty" name="quantity">
+                <option>1 unit (sample)</option>
+                <option>2–5 units</option>
+                <option>6–20 units</option>
+                <option>20+ units (project)</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-msg">Project details <span class="req">*</span></label>
+            <textarea class="textarea" id="c-msg" name="message" required data-minlen="10" placeholder="Model, required layout, power supply (110V/220V), climate, target install date…"></textarea>
+            <span class="field-error">Please give us at least a sentence (10 characters).</span>
+          </div>
+          <input class="hp-field" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-accent btn-block btn-lg" type="submit">Send Inquiry</button>
+        </form>
+        <div class="form-success mt-4">
+          <strong>Thanks — your inquiry has been received.</strong>
+          <p class="mt-1">Our sales engineer will reply within 12 working hours. For an instant answer, message us on WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =====================================================================
+     页脚（全站一致）
+====================================================================== -->
+<footer class="bg-brand-950 pt-14 text-brand-200">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="grid gap-10 pb-12 lg:grid-cols-12">
+
+      <!-- 品牌 -->
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-2.5">
+          <svg width="38" height="25" viewBox="0 0 64 40" aria-hidden="true">
+            <rect x="4" y="14" width="56" height="24" fill="none" stroke="#ffffff" stroke-width="3"/>
+            <path d="M0 14 L32 2 L64 14" fill="none" stroke="#ed8936" stroke-width="3" stroke-linejoin="round"/>
+            <line x1="24" y1="14" x2="24" y2="38" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="5 4"/>
+            <line x1="45" y1="14" x2="45" y2="38" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="5 4"/>
+          </svg>
+          <span class="leading-none">
+            <span class="block font-display text-[1.25rem] font-bold tracking-wide text-white" data-site="brand">杰诚 HOUSE</span>
+            <span class="mt-0.5 block text-[.56rem] font-semibold tracking-[.16em] text-brand-300">EXPANDABLE CONTAINER HOUSE</span>
+          </span>
+        </div>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-brand-300">
+          <span data-site="brandFull">杰诚 Modular House Co., Ltd.</span> — a factory-direct manufacturer of expandable
+          container houses, flat pack container houses and apple cabins, exporting to 60+ countries since 2010.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">CE</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">ISO 9001</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">SGS</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">EN 1090</span>
+        </div>
+      </div>
+
+      <!-- 产品 -->
+      <nav class="lg:col-span-2" aria-label="Products">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">PRODUCTS</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="transition hover:text-white" href="product-20ft-expandable.html">20FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-30ft-expandable.html">30FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-40ft-expandable.html">40FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-apple-cabin.html">Apple Cabin</a></li>
+          <li><a class="transition hover:text-white" href="products.html">All products</a></li>
+        </ul>
+      </nav>
+
+      <!-- 公司 -->
+      <nav class="lg:col-span-2" aria-label="Company">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">COMPANY</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="transition hover:text-white" href="about.html">About us</a></li>
+          <li><a class="transition hover:text-white" href="projects.html">Projects</a></li>
+          <li><a class="transition hover:text-white" href="blog.html">Blog</a></li>
+          <li><a class="transition hover:text-white" href="contact.html">Contact</a></li>
+          <li><a class="transition hover:text-white" href="about.html#factory">Factory tour</a></li>
+        </ul>
+      </nav>
+
+      <!-- 联系 -->
+      <div class="lg:col-span-4">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">CONTACT</h3>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-site="address">No. 88 Industrial Road, Zhengding District, Shijiazhuang, Hebei, China</span>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <a class="transition hover:text-white" data-href="phone" href="tel:"><span data-site="phone">+86 138 0000 0000</span></a>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            <a class="transition hover:text-white" data-href="email" href="mailto:"><span data-site="email">sales@example-containerhouse.com</span></a>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span data-site="hours">Mon – Sat 08:30 – 18:00 (GMT+8)</span>
+          </li>
+        </ul>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" href="#">WhatsApp us</a>
+          <a class="btn btn-accent btn-sm" href="contact.html">Request Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4 border-t border-brand-800 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span data-year>2026</span> <span data-site="brandFull">杰诚 Modular House Co., Ltd.</span> All rights reserved.</p>
+      <p class="text-brand-400">
+        Prices on this site are indicative FOB China and exclude freight, duty and local installation.
+        All dimensions are nominal ±2%.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- 全站脚本：site-config 必须在 main 之前 -->
+<script src="assets/js/site-config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

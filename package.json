@@ -1,0 +1,15 @@
+{
+  "name": "hb-expandable-container-house",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static multi-page marketing site for an expandable container house factory (HTML + Tailwind CSS + vanilla JS).",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/tailwind.src.css -o ./assets/css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/tailwind.src.css -o ./assets/css/tailwind.css --watch",
+    "images": "node tools/generate-placeholders.mjs",
+    "serve": "python3 -m http.server 5173"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

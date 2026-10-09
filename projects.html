@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ===========================================================================
+  projects.html —— 客户案例 / 项目页
+  新增案例：复制一个 <article data-cat="..."> 卡片，改图、改国家、改数据
+  筛选按钮 data-filter 的值要和卡片 data-cat 里的词一致
+=========================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Container House Projects — Australia, USA, Saudi Arabia, Nigeria | 杰诚 HOUSE</title>
+  <meta name="description" content="Real expandable container house projects: granny flats in Sydney, ADUs in Texas, resort pods in Queenstown, a 24-unit labour camp in Riyadh. See the model, quantity and outcome for each.">
+  <link rel="canonical" href="https://www.example-containerhouse.com/projects.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+</head>
+
+<body class="bg-white font-sans antialiased">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="topbar hidden lg:block">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8 h-9 flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <a data-href="phone" href="tel:" class="flex items-center gap-1.5 transition hover:text-white">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span data-site="phone">+86 138 0000 0000</span>
+      </a>
+      <a data-href="email" href="mailto:" class="flex items-center gap-1.5 transition hover:text-white">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        <span data-site="email">sales@example-containerhouse.com</span>
+      </a>
+      <span class="hidden xl:flex items-center gap-1.5">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span data-site="hours">Mon – Sat 08:30 – 18:00 (GMT+8)</span>
+      </span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span>CE · ISO 9001 · SGS Audited Factory</span>
+      <span class="h-3.5 w-px bg-brand-600"></span>
+      <span>Shipping to 60+ countries</span>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="mx-auto max-w-8xl px-4 sm:px-5 lg:px-8">
+    <div class="flex h-16 items-center gap-2 sm:gap-4 lg:h-[4.25rem]">
+      <a href="index.html" class="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5" aria-label="杰诚 HOUSE — home">
+        <svg class="h-5 w-auto sm:h-[26px]" viewBox="0 0 64 40" aria-hidden="true">
+          <rect x="4" y="14" width="56" height="24" fill="none" stroke="#1a365d" stroke-width="3"/>
+          <path d="M0 14 L32 2 L64 14" fill="none" stroke="#ed8936" stroke-width="3" stroke-linejoin="round"/>
+          <line x1="24" y1="14" x2="24" y2="38" stroke="#1a365d" stroke-width="2.5" stroke-dasharray="5 4"/>
+          <line x1="45" y1="14" x2="45" y2="38" stroke="#1a365d" stroke-width="2.5" stroke-dasharray="5 4"/>
+        </svg>
+        <span class="leading-none">
+          <span class="block font-display text-[1.15rem] font-bold tracking-wide text-brand-900 sm:text-[1.3rem]">杰诚 HOUSE</span>
+          <span class="mt-0.5 hidden text-[.58rem] font-semibold tracking-[.16em] text-slate-500 sm:block">EXPANDABLE CONTAINER HOUSE</span>
+        </span>
+      </a>
+      <nav class="ml-6 hidden items-center gap-7 lg:flex" aria-label="Main">
+        <a class="nav-link" href="index.html">Home</a>
+        <div class="nav-drop-wrap">
+          <a class="nav-link" href="products.html">Products
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="nav-drop">
+            <p class="drop-head">Expandable Series</p>
+            <a href="product-20ft-expandable.html">20FT Expandable Container House</a>
+            <a href="product-30ft-expandable.html">30FT Expandable Container House</a>
+            <a href="product-40ft-expandable.html">40FT Expandable Container House</a>
+            <p class="drop-head">Other Series</p>
+            <a href="product-apple-cabin.html">Apple Cabin / Capsule House</a>
+            <a href="products.html">View all products →</a>
+          </div>
+        </div>
+        <a class="nav-link" href="projects.html" aria-current="page">Projects</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="blog.html">Blog</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-2 sm:gap-3">
+        <a data-href="whatsapp" href="#" class="hidden items-center gap-2 text-sm font-semibold text-brand-800 transition hover:text-accent-600 xl:flex">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#25d366]"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.37 2.98 1.17 3.09.78 3.65.73.56-.05 1.81-.74 2.06-1.45.25-.71.25-1.32.17-1.45-.07-.13-.27-.2-.57-.35zM12.04 21.5a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.51 0 4.88.98 6.65 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.42 9.41z"/></svg>
+          WhatsApp
+        </a>
+        <a href="contact.html" class="btn btn-accent btn-sm px-3 sm:px-4 lg:px-5">Request Quote</a>
+        <button class="burger lg:hidden -mr-1 p-2" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-panel border-t border-[#e5e9f0] lg:hidden" id="mobilePanel">
+    <nav class="px-5 pb-6 pt-2" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="products.html">All Products</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-20ft-expandable.html">— 20FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-30ft-expandable.html">— 30FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-40ft-expandable.html">— 40FT Expandable</a>
+      <a class="pl-4 text-[.9rem] font-medium text-slate-600" href="product-apple-cabin.html">— Apple Cabin</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="mt-5 grid grid-cols-2 gap-2">
+        <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" href="#">WhatsApp</a>
+        <a class="btn btn-accent btn-sm" href="contact.html">Request Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =====================================================================
+     页头
+====================================================================== -->
+<section class="bg-blueprint py-12 lg:py-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> <span class="mx-1.5">/</span> <span aria-current="page">Projects</span>
+    </nav>
+    <h1 class="section-title section-title-light mt-4 text-[2rem] lg:text-[2.9rem]">Customer Projects</h1>
+    <p class="mt-4 max-w-3xl leading-relaxed text-brand-100">
+      Nine orders, nine ports, nine different reasons to buy. For each one we list the model, the quantity, the actual
+      outcome and the part that was difficult — because the difficult part is what tells you whether a supplier is
+      worth using twice.
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================================
+     汇总数据条
+====================================================================== -->
+<section class="border-b border-[#e5e9f0] bg-white py-8">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <dl class="grid grid-cols-2 gap-x-8 gap-y-6 lg:grid-cols-4">
+      <div class="stat-box reveal"><dt class="stat-num"><span data-count="60">60</span>+</dt><dd class="stat-label">Countries with delivered units</dd></div>
+      <div class="stat-box reveal"><dt class="stat-num"><span data-count="1600">1,600</span>+</dt><dd class="stat-label">Units delivered since 2017</dd></div>
+      <div class="stat-box reveal"><dt class="stat-num"><span data-count="11">11</span> weeks</dt><dd class="stat-label">Fastest project: PO to handover</dd></div>
+      <div class="stat-box reveal"><dt class="stat-num"><span data-count="68">68</span>%</dt><dd class="stat-label">Buyers who ordered again</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- =====================================================================
+     案例网格 + 筛选
+====================================================================== -->
+<section class="bg-white py-12 lg:py-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+
+    <div class="flex flex-wrap items-center gap-2" data-filter-group="projects" role="group" aria-label="Filter projects">
+      <button class="filter-tab is-active" data-filter="all" type="button">All projects</button>
+      <button class="filter-tab" data-filter="residential" type="button">Residential</button>
+      <button class="filter-tab" data-filter="camp" type="button">Site camps &amp; staff housing</button>
+      <button class="filter-tab" data-filter="hospitality" type="button">Resort &amp; glamping</button>
+      <button class="filter-tab" data-filter="public" type="button">Public &amp; institutional</button>
+      <span class="ml-auto text-sm text-slate-500"><span data-filter-count="projects">9</span> projects</span>
+    </div>
+
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-filter-target="projects">
+
+      <!-- 澳大利亚 -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="residential">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Australia</span>
+          <img src="assets/img/project-au.svg" alt="30ft expandable container house as a granny flat in Sydney" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">30FT Expandable · 2 units</p>
+          <h2 class="mt-1.5 font-display text-lg font-bold leading-snug text-brand-900">Granny flat for a Sydney family</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Location</dt><dd>Sydney, NSW</dd></div>
+            <div><dt>Purpose</dt><dd>Secondary dwelling for parents</dd></div>
+            <div><dt>Year</dt><dd>2025</dd></div>
+            <div><dt>Outcome</dt><dd>Council approved, installed in one morning</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-slate-600">
+            The tricky part was the site: a sloping backyard with 1.6 m of fall. We supplied a base drawing with
+            adjustable steel feet so the client did not have to pour a slab.
+          </p>
+        </div>
+      </article>
+
+      <!-- 美国 -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="residential">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">United States</span>
+          <img src="assets/img/project-us.svg" alt="20ft expandable container house as a backyard ADU in Austin Texas" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">20FT Expandable · 1 unit</p>
+          <h2 class="mt-1.5 font-display text-lg font-bold leading-snug text-brand-900">Backyard ADU in Austin, Texas</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Location</dt><dd>Austin, TX</dd></div>
+            <div><dt>Purpose</dt><dd>Rental ADU</dd></div>
+            <div><dt>Year</dt><dd>2025</dd></div>
+            <div><dt>Outcome</dt><dd>Permitted in 6 weeks, rented from month one</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-slate-600">
+            US-specific build: 110 V UL-listed components throughout, R-13 equivalent wall insulation and IBC
+            documentation. The client's inspector asked for the material declaration — we had it ready.
+          </p>
+        </div>
+      </article>
+
+      <!-- 新西兰 -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="hospitality">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">New Zealand</span>
+          <img src="assets/img/project-nz.svg" alt="Apple cabins used as resort pods in Queenstown" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Apple Cabin · 6 units</p>
+          <h2 class="mt-1.5 font-display text-lg font-bold leading-snug text-brand-900">Six resort pods in Queenstown</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Location</dt><dd>Queenstown</dd></div>
+            <div><dt>Purpose</dt><dd>Rental accommodation</dd></div>
+            <div><dt>Year</dt><dd>2024</dd></div>
+            <div><dt>Outcome</dt><dd>Paid back in under two seasons</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-slate-600">
+            Two were sited on a slope with a cantilevered deck. The glazing faces the lake on every unit, which is
+            exactly what the reviews mention.
+          </p>
+        </div>
+      </article>
+
+      <!-- 沙特 -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="camp">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Saudi Arabia</span>
+          <img src="assets/img/project-sa.svg" alt="40ft expandable container houses as a labour camp in Riyadh" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">40FT Expandable · 24 units</p>
+          <h2 class="mt-1.5 font-display text-lg font-bold leading-snug text-brand-900">24-unit labour camp, Riyadh</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Location</dt><dd>Riyadh</dd></div>
+            <div><dt>Purpose</dt><dd>Site accommodation, 2 storeys</dd></div>
+            <div><dt>Year</dt><dd>2024</dd></div>
+            <div><dt>Outcome</dt><dd>Delivered in 3 shipments, 11 weeks PO to handover</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-slate-600">
+            The hard part was heat: 48 °C summer ambient. We moved to 75 mm PU panels, added roof insulation and
+            upgraded to two AC units per floor plate. Power was 220 V / 60 Hz with UK sockets.
+          </p>
+        </div>
+      </article>
+
+      <!-- 尼日利亚 -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="camp">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Nigeria</span>
+          <img src="assets/img/project-af.svg" alt="40ft expandable container houses as staff housing in Lagos" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">40FT Expandable · 8 units</p>
+          <h2 class="mt-1.5 font-display text-lg font-bold leading-snug text-brand-900">Staff housing, Lagos</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Location</dt><dd>Lagos</dd></div>
+            <div><dt>Purpose</dt><dd>Staff accommodation</dd></div>
+            <div><dt>Year</dt><dd>2023</dd></div>
+            <div><dt>Outcome</dt><dd>Installed in 9 days after trucks arrived</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-slate-600">
+            Humidity, not temperature, was the issue. We used PU panels, added a dehumidifier pre-wire and made sure
+            the roof drainage discharged well clear of the base.
+          </p>
+        </div>
+      </article>
+
+      <!-- 智利 -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="camp">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Chile</span>
+          <img src="assets/img/project-cl.svg" alt="30ft expandable container house as a site office in Antofagasta" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">30FT Expandable · 4 units</p>
+          <h2 class="mt-1.5 font-display text-lg font-bold leading-snug text-brand-900">Mine site offices, Antofagasta</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Location</dt><dd>Antofagasta, Atacama</dd></div>
+            <div><dt>Purpose</dt><dd>Site offices and meeting room</dd></div>
+            <div><dt>Year</dt><dd>2023</dd></div>
+            <div><dt>Outcome</dt><dd>Four units joined into one 226 m² office</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-slate-600">
+            Desert site with 1,000 m altitude and high UV. Upgraded powder-coat finish, aluminium window frames and
+            extra dust sealing on the door thresholds.
+          </p>
+        </div>
+      </article>
+
+      <!-- 菲律宾 -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="hospitality">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Philippines</span>
+          <img src="assets/img/project-ph.svg" alt="Apple cabins used as resort units in Cebu" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">Apple Cabin · 12 units</p>
+          <h2 class="mt-1.5 font-display text-lg font-bold leading-snug text-brand-900">Beach resort expansion, Cebu</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Location</dt><dd>Cebu</dd></div>
+            <div><dt>Purpose</dt><dd>Resort rooms</dd></div>
+            <div><dt>Year</dt><dd>2025</dd></div>
+            <div><dt>Outcome</dt><dd>12 units in 3 containers, 14 weeks total</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-slate-600">
+            Salt air is the enemy of every finish. We specified marine-grade fasteners, anodised aluminium and
+            stainless fittings on the exterior of all 12 units.
+          </p>
+        </div>
+      </article>
+
+      <!-- 德国 -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="public">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Germany</span>
+          <img src="assets/img/project-de.svg" alt="20ft expandable container houses as student housing in Leipzig" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">20FT Expandable · 16 units</p>
+          <h2 class="mt-1.5 font-display text-lg font-bold leading-snug text-brand-900">Temporary student housing, Leipzig</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Location</dt><dd>Leipzig</dd></div>
+            <div><dt>Purpose</dt><dd>Temporary student accommodation</dd></div>
+            <div><dt>Year</dt><dd>2024</dd></div>
+            <div><dt>Outcome</dt><dd>Stacked 2 floors, 32 bed spaces</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-slate-600">
+            The strictest part was EU compliance: EN 1090 structural certification, CE marking and 230 V electrical
+            with German socket types. Fire-rated rock wool panels throughout.
+          </p>
+        </div>
+      </article>
+
+      <!-- 肯尼亚 -->
+      <article class="card card-hover reveal overflow-hidden" data-cat="public">
+        <div class="card-media aspect-[4/3]">
+          <span class="card-badge">Kenya</span>
+          <img src="assets/img/project-ke.svg" alt="30ft expandable container house as a clinic annex in Nairobi" loading="lazy">
+        </div>
+        <div class="p-5">
+          <p class="model-code text-xs font-bold text-accent-600">30FT Expandable · 2 units</p>
+          <h2 class="mt-1.5 font-display text-lg font-bold leading-snug text-brand-900">Clinic annex, Nairobi</h2>
+          <dl class="spec-list mt-4">
+            <div><dt>Location</dt><dd>Nairobi</dd></div>
+            <div><dt>Purpose</dt><dd>Outpatient consulting rooms</dd></div>
+            <div><dt>Year</dt><dd>2023</dd></div>
+            <div><dt>Outcome</dt><dd>Operational 12 days after containers cleared</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-slate-600">
+            Fitted out with antibacterial wall panels, wipe-clean flooring, a sluice room and hand-wash basins in
+            every consulting room. Two units joined with a connecting corridor.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="mt-10 rounded-lg border border-dashed border-brand-200 bg-brand-50 p-6 text-center text-slate-600" data-filter-empty="projects" hidden>
+      No projects in this category yet — <a class="link-arrow" href="contact.html">ask us for references</a> in your region.
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================================
+     案例拆解（重点案例详述）
+====================================================================== -->
+<section class="border-y border-[#e5e9f0] bg-brand-50 py-14 lg:py-16">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow">Project breakdown</p>
+      <h2 class="section-title mt-3 text-[1.8rem] lg:text-[2.3rem]">The Riyadh camp, taken apart</h2>
+      <p class="mt-4 text-slate-600">Our largest single project to date, and the one that taught us the most about hot-climate specification.</p>
+    </div>
+
+    <div class="mt-9 grid gap-8 lg:grid-cols-12">
+      <figure class="lg:col-span-6 reveal">
+        <img class="w-full rounded-lg border border-brand-100" src="assets/img/project-sa.svg" alt="24-unit labour camp in Riyadh" loading="lazy">
+        <figcaption class="mt-3 text-xs text-slate-500">Two-storey stacked 40FT units with external stair towers, Riyadh 2024.</figcaption>
+      </figure>
+
+      <div class="lg:col-span-6">
+        <div class="table-scroll card overflow-hidden reveal">
+          <table class="spec-table">
+            <tbody>
+              <tr><th scope="row">Client type</th><td>EPC contractor, infrastructure sector</td></tr>
+              <tr><th scope="row">Order</th><td>24 × 40FT expandable units, two storeys</td></tr>
+              <tr><th scope="row">Capacity</th><td>192 bed spaces + 4 ablution blocks</td></tr>
+              <tr><th scope="row">Specification highlights</th><td>75 mm PU panels, +25 mm roof insulation, 2 × AC per unit, 220 V / 60 Hz</td></tr>
+              <tr><th scope="row">Shipments</th><td>3 × 40HQ, weekly loading photographs</td></tr>
+              <tr><th scope="row">Timeline</th><td>PO → first container loaded in 38 days; all three shipments in 11 weeks</td></tr>
+              <tr><th scope="row">On-site assembly</th><td>9 days from first truck to occupancy</td></tr>
+              <tr><th scope="row">What went wrong</th><td>The client changed the stair tower position after approval, which cost 6 days. Since then we freeze the stair layout in writing before cutting steel.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card reveal mt-6 p-5">
+          <p class="text-sm leading-relaxed text-slate-700">
+            <strong class="text-brand-900">Quote from the project manager:</strong>
+            “We stacked 24 units into two floors and moved the crew in within nine days of the trucks arriving.
+            No welding on site, which is what we needed.”
+          </p>
+          <p class="mt-2 text-xs text-slate-500">A. Haddad, Project Manager, Riyadh</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     询盘 CTA
+====================================================================== -->
+<section class="relative isolate overflow-hidden bg-brand-900 py-14 lg:py-16">
+  <div class="absolute inset-0 bg-blueprint opacity-70"></div>
+  <div class="relative mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-7">
+        <p class="eyebrow eyebrow-light">Your project next</p>
+        <h2 class="section-title section-title-light mt-3 text-[1.8rem] lg:text-[2.3rem]">
+          Tell us your site and we will tell you what it can hold
+        </h2>
+        <p class="mt-4 max-w-2xl leading-relaxed text-brand-100">
+          Land dimensions, access width, climate, power supply, number of occupants. Four numbers is enough for us to
+          shortlist a model and sketch a layout — at no cost, and with no obligation to order.
+        </p>
+        <ul class="mt-7 space-y-3 text-sm text-brand-100">
+          <li class="flex gap-3"><span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent-500 text-white"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4"><path d="m5 13 4 4L19 7"/></svg></span>References in your region on request</li>
+          <li class="flex gap-3"><span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent-500 text-white"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4"><path d="m5 13 4 4L19 7"/></svg></span>Site-specific base and rigging drawing</li>
+          <li class="flex gap-3"><span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent-500 text-white"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4"><path d="m5 13 4 4L19 7"/></svg></span>Landed cost to your port, not just FOB</li>
+        </ul>
+      </div>
+      <div class="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
+        <a class="btn btn-accent btn-lg" href="contact.html">Start my project</a>
+        <a class="btn btn-ghost-light btn-lg" data-href="whatsapp" data-wa-text="Hi, I have a project to discuss. My site details: " href="#">WhatsApp us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-brand-950 pt-14 text-brand-200">
+  <div class="mx-auto max-w-8xl px-5 lg:px-8">
+    <div class="grid gap-10 pb-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-2.5">
+          <svg width="38" height="25" viewBox="0 0 64 40" aria-hidden="true">
+            <rect x="4" y="14" width="56" height="24" fill="none" stroke="#ffffff" stroke-width="3"/>
+            <path d="M0 14 L32 2 L64 14" fill="none" stroke="#ed8936" stroke-width="3" stroke-linejoin="round"/>
+            <line x1="24" y1="14" x2="24" y2="38" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="5 4"/>
+            <line x1="45" y1="14" x2="45" y2="38" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="5 4"/>
+          </svg>
+          <span class="leading-none">
+            <span class="block font-display text-[1.25rem] font-bold tracking-wide text-white" data-site="brand">杰诚 HOUSE</span>
+            <span class="mt-0.5 block text-[.56rem] font-semibold tracking-[.16em] text-brand-300">EXPANDABLE CONTAINER HOUSE</span>
+          </span>
+        </div>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-brand-300">
+          <span data-site="brandFull">杰诚 Modular House Co., Ltd.</span> — a factory-direct manufacturer of expandable
+          container houses, flat pack container houses and apple cabins, exporting to 60+ countries since 2010.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">CE</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">ISO 9001</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">SGS</span>
+          <span class="badge-cert bg-transparent text-brand-100 border-brand-700">EN 1090</span>
+        </div>
+      </div>
+      <nav class="lg:col-span-2" aria-label="Products">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">PRODUCTS</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="transition hover:text-white" href="product-20ft-expandable.html">20FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-30ft-expandable.html">30FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-40ft-expandable.html">40FT Expandable</a></li>
+          <li><a class="transition hover:text-white" href="product-apple-cabin.html">Apple Cabin</a></li>
+          <li><a class="transition hover:text-white" href="products.html">All products</a></li>
+        </ul>
+      </nav>
+      <nav class="lg:col-span-2" aria-label="Company">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">COMPANY</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="transition hover:text-white" href="about.html">About us</a></li>
+          <li><a class="transition hover:text-white" href="projects.html">Projects</a></li>
+          <li><a class="transition hover:text-white" href="blog.html">Blog</a></li>
+          <li><a class="transition hover:text-white" href="contact.html">Contact</a></li>
+          <li><a class="transition hover:text-white" href="about.html#factory">Factory tour</a></li>
+        </ul>
+      </nav>
+      <div class="lg:col-span-4">
+        <h3 class="font-display text-base font-bold tracking-wider text-white">CONTACT</h3>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-site="address">No. 88 Industrial Road, Zhengding District, Shijiazhuang, Hebei, China</span>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <a class="transition hover:text-white" data-href="phone" href="tel:"><span data-site="phone">+86 138 0000 0000</span></a>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            <a class="transition hover:text-white" data-href="email" href="mailto:"><span data-site="email">sales@example-containerhouse.com</span></a>
+          </li>
+          <li class="flex gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed8936" stroke-width="2" class="mt-0.5 shrink-0"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span data-site="hours">Mon – Sat 08:30 – 18:00 (GMT+8)</span>
+          </li>
+        </ul>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <a class="btn btn-whatsapp btn-sm" data-href="whatsapp" href="#">WhatsApp us</a>
+          <a class="btn btn-accent btn-sm" href="contact.html">Request Quote</a>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4 border-t border-brand-800 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span data-year>2026</span> <span data-site="brandFull">杰诚 Modular House Co., Ltd.</span> All rights reserved.</p>
+      <p class="text-brand-400">Prices on this site are indicative FOB China and exclude freight, duty and local installation. All dimensions are nominal ±2%.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site-config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
